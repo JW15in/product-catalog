@@ -66,10 +66,18 @@ function imgs(sku,fallback){
       "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__2.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__3.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__4.jpg",
-      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__k2.jpg"
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__5.jpg",
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__6.jpg",
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__7.jpg",
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__8.jpg",
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__9.jpg",
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__10.jpg",
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__k2.jpg",
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__k3.jpg",
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__k4.jpg"
     ];
     if(fallback)a.push(fallback);
-    return a;
+    return [...new Set(a)];
   }
 const products={
 blok:{price:3936,name:"BLOK",sku:"100116819600012",fallback:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/Blok/pic/KiWAV-motorcycle-mirror-Blok-black-hero.webp",summary:"俐落的多邊形造型，CNC 鋁合金鏡殼與鏡臂，重點在穩定結構與高調整度。",chips:["26–55 mm","3 關節","M6","凸面鏡"],specs:[["鏡殼","CNC 鋁合金"],["鏡臂","CNC 鋁合金"],["鏡片","Chrome convex lens"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["固定螺絲","M6"],["重量","約 608 g / 對"],["包裝","左右一對"]],points:["20 齒鎖定關節有助於固定鏡臂角度。","凸面鏡提供較寬後視範圍。","此版本為雙孔整流罩用可調底座。"]},
