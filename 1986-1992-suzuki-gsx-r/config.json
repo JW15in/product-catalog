@@ -9,17 +9,17 @@
     "zipper": true,
     "oval": true,
     "retro": true,
-    "modern": true,
+    "modern": false,
     "classicmx": true,
-    "classicplus": true,
+    "classicplus": false,
     "cleaver2": true,
     "lucifer": true,
     "mamba": true,
     "mambaround": true,
-    "ellipse": true,
+    "ellipse": false,
     "viper": true,
     "stark": true,
     "panther": true
   },
-  "enableZoom": true
+  "enableZoom": false
 }
