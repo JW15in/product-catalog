@@ -17,7 +17,7 @@ a{text-decoration:none;color:inherit}.wrap{max-width:1080px;margin:auto;padding:
 .thumb{border:2px solid transparent;border-radius:9px;overflow:hidden;background:#fff;cursor:pointer;padding:0}
 .thumb.active{border-color:#171a20}.thumb img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
 .info{padding:25px 24px}.eyebrow{font-size:12px;letter-spacing:.12em;color:#7a8088;font-weight:850}.info h1{font-size:38px;line-height:1.05;margin:8px 0 10px}
-.summary{color:#555b63;line-height:1.65;margin-bottom:12px}.pricebox{font-size:26px;font-weight:900;margin:7px 0 16px}.pricebox small{display:block;font-size:11px;color:#777e87;font-weight:700;margin-top:3px}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{background:var(--soft);border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}
+.summary{color:#555b63;line-height:1.65;margin-bottom:12px}.pricebox{font-size:26px;font-weight:900;margin:7px 0 16px}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{background:var(--soft);border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}
 .key{margin-top:20px;background:#171a20;color:#fff;border-radius:15px;padding:15px 16px;line-height:1.55}.key b{display:block;font-size:13px;color:#d8dde5;margin-bottom:4px}.key strong{font-size:20px}
 .section{background:#fff;border:1px solid var(--line);border-radius:18px;margin-top:16px;padding:20px}.section h2{font-size:20px;margin:0 0 14px}
 .specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}.row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:11px 0;font-size:14px}.row span:first-child{color:#6c727a}.row span:last-child{text-align:right;font-weight:700}
@@ -92,7 +92,7 @@ else{
  document.title=p.name+" 後視鏡詳細資料";
  document.getElementById("styleNo").textContent=p.no;
  document.getElementById("name").textContent=p.name;
- document.getElementById("summary").textContent=p.summary; document.getElementById("price").innerHTML="NT$"+p.price.toLocaleString("en-US")+"<small>參考售價 · USD × 30 × 0.8</small>";
+ document.getElementById("summary").textContent=p.summary; document.getElementById("price").textContent="NT$"+p.price.toLocaleString("en-US");
  document.getElementById("chips").innerHTML=p.chips.map(x=>'<span class="chip">'+x+'</span>').join("");
  document.getElementById("specs").innerHTML=p.specs.map(x=>'<div class="row"><span>'+x[0]+'</span><span>'+x[1]+'</span></div>').join("");
  document.getElementById("points").innerHTML=p.points.map(x=>'<li>'+x+'</li>').join("");
