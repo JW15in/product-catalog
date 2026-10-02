@@ -16,7 +16,7 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
 .notice strong{display:block;margin-bottom:4px}.catalog-head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin:24px 2px 12px}.catalog-head h2{margin:0;font-size:24px}.catalog-head span{font-size:13px;color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.035);transition:.15s}.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.085)}
 .photo{position:relative;background:#fff;min-height:220px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo img{display:block;width:90%;height:90%;object-fit:contain;position:relative;z-index:2}.img-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#a1a6ad;font-size:12px;font-weight:850;letter-spacing:.14em}.badge{position:absolute;z-index:3;left:12px;top:12px;background:rgba(18,20,24,.86);color:#fff;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:850}
-.body{padding:15px}.name-row{display:flex;justify-content:space-between;align-items:center;gap:8px}.name{font-size:21px;font-weight:850}.arrow{font-size:20px;color:#777e87}.tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.tag{background:var(--soft);padding:5px 8px;border-radius:7px;font-size:12px;color:#454a51}.desc{font-size:13.5px;color:#555b63;line-height:1.55;min-height:42px}
+.body{padding:15px}.name-row{display:flex;justify-content:space-between;align-items:center;gap:8px}.name{font-size:21px;font-weight:850}.arrow{font-size:20px;color:#777e87}.tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.tag{background:var(--soft);padding:5px 8px;border-radius:7px;font-size:12px;color:#454a51}.desc{font-size:13.5px;color:#555b63;line-height:1.55;min-height:42px}.price{font-size:20px;font-weight:900;margin-top:10px;color:#17181a}.price small{font-size:11px;color:#777e87;font-weight:700;margin-left:5px}
 .cta{margin-top:13px;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:850}.cta span:last-child{color:#6c727a;white-space:nowrap}
 .help{background:#171a20;color:#fff;border-radius:18px;padding:21px;margin-top:22px}.help h3{margin:0 0 7px;font-size:20px}.help p{margin:0;color:#d8dde4;line-height:1.65;font-size:14px}
 .foot{margin-top:16px;color:#717780;font-size:12.5px;line-height:1.6;text-align:center}
@@ -27,7 +27,7 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
 <body><main class="wrap">
 <section class="top"><div class="eyebrow">MOTORCYCLE FAIRING MIRROR CATALOG</div><h1>先選你喜歡的鏡子</h1><p>這些款式使用可調式雙孔整流罩底座。點進每一款可以看更多角度照片、鏡片類型、材質、調整方式與安裝規格。</p><div class="chips"><span class="chip">C2C 26–55 mm</span><span class="chip">50 mm 在範圍內</span><span class="chip">M6 雙孔安裝</span></div></section>
 <section class="notice"><strong>1990 Suzuki GSX-R / 老車請先確認實車尺寸</strong>如果原車兩孔中心距約 50 mm，孔距落在這系列的可調範圍內。但整流罩曲面、安裝面、螺絲與內側空間仍需確認。建議拍一張原車鏡座＋量尺照片給賣家。</section>
-<div class="catalog-head"><h2>可參考款式</h2><span>共 13 款 · 點卡片看更多圖片與 details</span></div>
+<div class="catalog-head"><h2>可參考款式</h2><span>共 13 款 · 價格 = 官網 USD × 30 × 0.8 · 點卡片看更多圖片與 details</span></div>
 <section class="grid">
 <a class="card" href="product.html?id=blok">
   <div class="photo">
@@ -39,7 +39,7 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
   <div class="body">
     <div class="name-row"><div class="name">BLOK</div><div class="arrow">→</div></div>
     <div class="tags"><span class="tag">26–55 mm</span><span class="tag">3 關節</span><span class="tag">凸面鏡</span></div>
-    <div class="desc">俐落多邊形・全鋁結構</div>
+    <div class="desc">俐落多邊形・全鋁結構</div><div class="price">NT$3,936 <small>參考售價</small></div>
     <div class="cta"><span>看照片與詳細規格</span><span>STYLE 01</span></div>
   </div>
 </a>
@@ -53,7 +53,7 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
   <div class="body">
     <div class="name-row"><div class="name">EMPEROR</div><div class="arrow">→</div></div>
     <div class="tags"><span class="tag">26–55 mm</span><span class="tag">4 關節</span><span class="tag">凸面鏡</span></div>
-    <div class="desc">四關節・調整自由度高</div>
+    <div class="desc">四關節・調整自由度高</div><div class="price">NT$2,568 <small>參考售價</small></div>
     <div class="cta"><span>看照片與詳細規格</span><span>STYLE 02</span></div>
   </div>
 </a>
@@ -67,7 +67,7 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
   <div class="body">
     <div class="name-row"><div class="name">VIPER II</div><div class="arrow">→</div></div>
     <div class="tags"><span class="tag">26–55 mm</span><span class="tag">3 關節</span><span class="tag">凸面鏡</span></div>
-    <div class="desc">跑格稜角・輕巧</div>
+    <div class="desc">跑格稜角・輕巧</div><div class="price">NT$2,786 <small>參考售價</small></div>
     <div class="cta"><span>看照片與詳細規格</span><span>STYLE 03</span></div>
   </div>
 </a>
@@ -81,7 +81,7 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
   <div class="body">
     <div class="name-row"><div class="name">PALM II</div><div class="arrow">→</div></div>
     <div class="tags"><span class="tag">26–55 mm</span><span class="tag">3 關節</span><span class="tag">非球面鏡</span></div>
-    <div class="desc">視野取向・非球面鏡</div>
+    <div class="desc">視野取向・非球面鏡</div><div class="price">NT$3,888 <small>參考售價</small></div>
     <div class="cta"><span>看照片與詳細規格</span><span>STYLE 04</span></div>
   </div>
 </a>
@@ -95,7 +95,7 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
   <div class="body">
     <div class="name-row"><div class="name">MISSIE</div><div class="arrow">→</div></div>
     <div class="tags"><span class="tag">26–55 mm</span><span class="tag">3 關節</span><span class="tag">凸面鏡</span></div>
-    <div class="desc">經典圓鏡</div>
+    <div class="desc">經典圓鏡</div><div class="price">NT$2,532 <small>參考售價</small></div>
     <div class="cta"><span>看照片與詳細規格</span><span>STYLE 05</span></div>
   </div>
 </a>
@@ -109,7 +109,7 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
   <div class="body">
     <div class="name-row"><div class="name">SHIELD</div><div class="arrow">→</div></div>
     <div class="tags"><span class="tag">26–55 mm</span><span class="tag">3 關節</span><span class="tag">凸面鏡</span></div>
-    <div class="desc">運動外型・E-mark</div>
+    <div class="desc">運動外型・E-mark</div><div class="price">NT$2,736 <small>參考售價</small></div>
     <div class="cta"><span>看照片與詳細規格</span><span>STYLE 06</span></div>
   </div>
 </a>
@@ -123,7 +123,7 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
   <div class="body">
     <div class="name-row"><div class="name">ZIPPER</div><div class="arrow">→</div></div>
     <div class="tags"><span class="tag">26–55 mm</span><span class="tag">3 關節</span><span class="tag">凸面鏡</span></div>
-    <div class="desc">緊湊四邊形</div>
+    <div class="desc">緊湊四邊形</div><div class="price">NT$3,473 <small>參考售價</small></div>
     <div class="cta"><span>看照片與詳細規格</span><span>STYLE 07</span></div>
   </div>
 </a>
@@ -137,7 +137,7 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
   <div class="body">
     <div class="name-row"><div class="name">OVAL</div><div class="arrow">→</div></div>
     <div class="tags"><span class="tag">26–55 mm</span><span class="tag">3 關節</span><span class="tag">非球面鏡</span></div>
-    <div class="desc">橢圓全鋁・視野取向</div>
+    <div class="desc">橢圓全鋁・視野取向</div><div class="price">NT$3,118 <small>參考售價</small></div>
     <div class="cta"><span>看照片與詳細規格</span><span>STYLE 08</span></div>
   </div>
 </a>
@@ -151,21 +151,20 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
   <div class="body">
     <div class="name-row"><div class="name">RETRO</div><div class="arrow">→</div></div>
     <div class="tags"><span class="tag">26–55 mm</span><span class="tag">可調底座</span><span class="tag">凸面鏡</span></div>
-    <div class="desc">復古圓潤造型</div>
+    <div class="desc">復古圓潤造型</div><div class="price">NT$2,662 <small>參考售價</small></div>
     <div class="cta"><span>看照片與詳細規格</span><span>STYLE 09</span></div>
   </div>
 </a>
 <a class="card" href="product.html?id=modern">
   <div class="photo">
-    <img loading="lazy" src="https://cdn.kiwavmotors.com/products/images/main/100106618260103__1.jpg" data-fallback="https://cdn.kiwav.com/kiwavebay/product/01/mirror/ModernS3/pic/KiWAV-motorcycle-mirrors-Modern-black-sportsbike-02.jpg" alt="MODERN motorcycle mirror"
-      onerror="if(this.dataset.fallback&&!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.fallback}else{this.closest('.photo').classList.add('imgfail');this.style.display='none'}">
+    <img loading="lazy" src="https://i.ebayimg.com/images/g/eycAAOSw2ytbmI3F/s-l1600.jpg" alt="MODERN motorcycle mirror">
     <div class="img-placeholder">PHOTO</div>
     <span class="badge">10</span>
   </div>
   <div class="body">
     <div class="name-row"><div class="name">MODERN</div><div class="arrow">→</div></div>
     <div class="tags"><span class="tag">26–55 mm</span><span class="tag">3 關節</span><span class="tag">藍色凸面鏡</span></div>
-    <div class="desc">全鋁方鏡・藍色鏡片</div>
+    <div class="desc">全鋁方鏡・藍色鏡片</div><div class="price">NT$3,192 <small>參考售價</small></div>
     <div class="cta"><span>看照片與詳細規格</span><span>STYLE 10</span></div>
   </div>
 </a>
@@ -179,21 +178,20 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
   <div class="body">
     <div class="name-row"><div class="name">CLASSIC MX</div><div class="arrow">→</div></div>
     <div class="tags"><span class="tag">26–55 mm</span><span class="tag">可調底座</span><span class="tag">緊湊鏡面</span></div>
-    <div class="desc">低調經典方形</div>
+    <div class="desc">低調經典方形</div><div class="price">NT$2,028 <small>參考售價</small></div>
     <div class="cta"><span>看照片與詳細規格</span><span>STYLE 11</span></div>
   </div>
 </a>
 <a class="card" href="product.html?id=classicplus">
   <div class="photo">
-    <img loading="lazy" src="https://cdn.kiwavmotors.com/products/images/main/100105618260103__1.jpg" data-fallback="https://cdn.kiwav.com/kiwavebay/product/01/mirror/ClassicPlus/pic/KiWAV-motorcycle-mirrors-ClassicPlus-black-sportsbike-02.jpg" alt="CLASSIC PLUS motorcycle mirror"
-      onerror="if(this.dataset.fallback&&!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.fallback}else{this.closest('.photo').classList.add('imgfail');this.style.display='none'}">
+    <img loading="lazy" src="https://cdn.kiwavmotors.com/products/images/main/PARENT-01-1826-ClassicPlus__1.jpg" alt="CLASSIC PLUS motorcycle mirror">
     <div class="img-placeholder">PHOTO</div>
     <span class="badge">12</span>
   </div>
   <div class="body">
     <div class="name-row"><div class="name">CLASSIC PLUS</div><div class="arrow">→</div></div>
     <div class="tags"><span class="tag">26–55 mm</span><span class="tag">可調底座</span><span class="tag">非球面鏡</span></div>
-    <div class="desc">加長鏡臂・矩形</div>
+    <div class="desc">加長鏡臂・矩形</div><div class="price">NT$2,278 <small>參考售價</small></div>
     <div class="cta"><span>看照片與詳細規格</span><span>STYLE 12</span></div>
   </div>
 </a>
@@ -207,7 +205,7 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
   <div class="body">
     <div class="name-row"><div class="name">CLEAVER II</div><div class="arrow">→</div></div>
     <div class="tags"><span class="tag">26–55 mm</span><span class="tag">可調底座</span><span class="tag">非球面鏡</span></div>
-    <div class="desc">大型全鋁・視野優先</div>
+    <div class="desc">大型全鋁・視野優先</div><div class="price">NT$4,030 <small>參考售價</small></div>
     <div class="cta"><span>看照片與詳細規格</span><span>STYLE 13</span></div>
   </div>
 </a></section>
