@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Catalog Admin</title>
+<style>
+:root{--bg:#f5f6f7;--card:#fff;--ink:#17181a;--muted:#6a7078;--line:#e1e4e8;--dark:#171a20}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif}
+.wrap{max-width:760px;margin:auto;padding:28px 16px 60px}.head{margin-bottom:18px}.head h1{margin:0 0 7px}.head p{margin:0;color:var(--muted);line-height:1.6}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;margin-top:14px}
+.panel h2{font-size:18px;margin:0 0 14px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+button{border:0;border-radius:10px;padding:10px 13px;font-weight:800;cursor:pointer}.secondary{background:#eef1f4}.primary{background:#171a20;color:#fff;width:100%;font-size:15px;padding:13px}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.item{display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:11px;padding:10px 11px}.item input{width:18px;height:18px}
+.toggle{display:flex;justify-content:space-between;align-items:center;gap:18px}.toggle input{width:20px;height:20px}
+label{font-weight:700}.hint{font-size:12px;color:var(--muted);line-height:1.6;margin-top:8px}
+.token{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:inherit;margin:8px 0 10px}
+.status{margin-top:12px;padding:10px 12px;border-radius:10px;background:#eef1f4;font-size:13px;display:none}
+@media(max-width:560px){.products{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="head"><h1>Catalog Admin</h1><p>控制 1986–1992 Suzuki GSX-R 型錄要顯示哪些產品，以及是否開啟圖片放大。</p></div>
+
+<section class="panel">
+<h2>產品顯示</h2>
+<div class="toolbar"><button class="secondary" onclick="setAll(true)">全選</button><button class="secondary" onclick="setAll(false)">全部取消</button></div>
+<div class="products" id="products"></div>
+</section>
+
+<section class="panel">
+<h2>功能</h2>
+<div class="toggle"><label for="enableZoom">圖片點擊放大</label><input id="enableZoom" type="checkbox"></div>
+</section>
+
+<section class="panel">
+<h2>儲存到 GitHub</h2>
+<input id="token" class="token" type="password" autocomplete="off" placeholder="Paste GitHub Personal Access Token">
+<div class="hint">Token 只在這次瀏覽器操作中使用，不會寫進網站或 config.json。建議使用 fine-grained token，只給 JW15in/product-catalog 的 Contents: Read and write 權限。</div>
+<button class="primary" onclick="saveConfig()">Save changes</button>
+<div class="status" id="status"></div>
+</section>
+</main>
+
+<script>
+const products=[["blok","BLOK"],["emperor","EMPEROR"],["viper2","VIPER II"],["palm2","PALM II"],["missie","MISSIE"],["shield","SHIELD"],["zipper","ZIPPER"],["oval","OVAL"],["retro","RETRO"],["modern","MODERN"],["classicmx","CLASSIC MX"],["classicplus","CLASSIC PLUS"],["cleaver2","CLEAVER II"],["lucifer","LUCIFER"],["mamba","MAMBA"],["mambaround","MAMBA ROUND"],["ellipse","ELLIPSE"],["viper","VIPER"],["stark","STARK"],["panther","PANTHER"]];
+const repo="JW15in/product-catalog";
+const path="1986-1992-suzuki-gsx-r/config.json";
+const api="https://api.github.com/repos/"+repo+"/contents/"+path;
+
+function render(){
+  const box=document.getElementById("products");
+  box.innerHTML=products.map(([id,name])=>'<label class="item"><input type="checkbox" data-id="'+id+'"><span>'+name+'</span></label>').join("");
+}
+function setAll(v){document.querySelectorAll("[data-id]").forEach(x=>x.checked=v);}
+function show(msg,ok=true){
+  const s=document.getElementById("status");s.style.display="block";s.textContent=msg;s.style.background=ok?"#eef7ef":"#fff0f0";
+}
+async function load(){
+  render();
+  try{
+    const r=await fetch("1986-1992-suzuki-gsx-r/config.json?ts="+Date.now(),{cache:"no-store"});
+    const cfg=await r.json();
+    document.querySelectorAll("[data-id]").forEach(x=>x.checked=!cfg.products||cfg.products[x.dataset.id]!==false);
+    document.getElementById("enableZoom").checked=cfg.enableZoom!==false;
+  }catch(e){
+    setAll(true);document.getElementById("enableZoom").checked=true;
+  }
+}
+async function saveConfig(){
+  const token=document.getElementById("token").value.trim();
+  if(!token){show("請先輸入 GitHub token。",false);return;}
+  const cfg={products:{},enableZoom:document.getElementById("enableZoom").checked};
+  document.querySelectorAll("[data-id]").forEach(x=>cfg.products[x.dataset.id]=x.checked);
+  try{
+    show("正在讀取目前設定…");
+    const headers={"Accept":"application/vnd.github+json","Authorization":"Bearer "+token,"X-GitHub-Api-Version":"2022-11-28"};
+    const gr=await fetch(api,{headers});
+    if(!gr.ok) throw new Error("無法讀取 config.json ("+gr.status+")");
+    const current=await gr.json();
+    const content=btoa(unescape(encodeURIComponent(JSON.stringify(cfg,null,2))));
+    show("正在儲存…");
+    const pr=await fetch(api,{method:"PUT",headers:{...headers,"Content-Type":"application/json"},body:JSON.stringify({message:"Update catalog display settings",content,sha:current.sha,branch:"main"})});
+    if(!pr.ok) throw new Error("儲存失敗 ("+pr.status+")");
+    show("已儲存。GitHub Pages 通常約 1–3 分鐘後更新。");
+  }catch(e){show(e.message||String(e),false);}
+}
+load();
+</script>
+</body>
+</html>
