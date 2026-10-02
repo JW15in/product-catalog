@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>後視鏡詳細資料</title>
+<style>
+:root{--bg:#f6f7f8;--card:#fff;--ink:#17181a;--muted:#656b73;--line:#e2e5e9;--dark:#171a20;--soft:#eef1f4}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif}
+a{text-decoration:none;color:inherit}.wrap{max-width:1040px;margin:auto;padding:14px 14px 50px}.back{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:800;margin:5px 0 13px}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.hero-img{background:#eceeef;min-height:390px}.hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+.info{padding:25px 24px}.eyebrow{font-size:12px;letter-spacing:.12em;color:#7a8088;font-weight:850}.info h1{font-size:38px;line-height:1.05;margin:8px 0 10px}
+.summary{color:#555b63;line-height:1.65;margin-bottom:16px}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{background:var(--soft);border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}
+.key{margin-top:20px;background:#171a20;color:#fff;border-radius:15px;padding:15px 16px;line-height:1.55}.key b{display:block;font-size:13px;color:#d8dde5;margin-bottom:4px}.key strong{font-size:20px}
+.section{background:#fff;border:1px solid var(--line);border-radius:18px;margin-top:16px;padding:20px}.section h2{font-size:20px;margin:0 0 14px}
+.specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}.row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:11px 0;font-size:14px}.row span:first-child{color:#6c727a}.row span:last-child{text-align:right;font-weight:700}
+.points{margin:0;padding-left:20px;color:#4e545c;line-height:1.75}.fitbox{background:#f0f5f0;border:1px solid #dbe7dc;border-radius:14px;padding:15px 16px;line-height:1.6}.warn{margin-top:12px;background:#fff6e8;border:1px solid #f0dfbf;border-radius:14px;padding:14px 15px;line-height:1.6}
+.cta{margin-top:16px;background:#171a20;color:#fff;border-radius:18px;padding:20px;text-align:center}.cta strong{font-size:20px;display:block;margin-bottom:5px}.cta span{color:#d6dbe2;font-size:14px}
+#notfound{display:none;background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;text-align:center}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.hero-img{min-height:0}.hero-img img{aspect-ratio:16/10;height:auto}.info{padding:20px 17px}.info h1{font-size:32px}.specs{grid-template-columns:1fr}.wrap{padding:10px 10px 36px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<a class="back" href="index.html">← 回到全部款式</a>
+
+<div id="page">
+<section class="hero">
+<div class="hero-img"><img id="heroImg" alt=""></div>
+<div class="info">
+<div class="eyebrow" id="styleNo"></div>
+<h1 id="name"></h1>
+<div class="summary" id="summary"></div>
+<div class="chips" id="chips"></div>
+<div class="key"><b>這系列最重要的安裝條件</b><strong>孔距 C2C 26–55 mm</strong><div>使用 M6 螺絲的雙孔整流罩安裝。50 mm 位於可調範圍內。</div></div>
+</div>
+</section>
+
+<section class="section">
+<h2>規格</h2>
+<div class="specs" id="specs"></div>
+</section>
+
+<section class="section">
+<h2>這款的重點</h2>
+<ul class="points" id="points"></ul>
+</section>
+
+<section class="section">
+<h2>安裝與適配確認</h2>
+<div class="fitbox">先量原車兩個固定孔「中心到中心」距離。如果約 50 mm，孔距本身符合 26–55 mm 的範圍；安裝前仍要確認原車底座曲面、螺絲規格、整流罩內側空間，以及鏡臂是否會碰到風鏡或整流罩。</div>
+<div class="warn"><b>注意：</b>年份與車名只能作為參考，不能取代實際尺寸確認。老車尤其建議提供原車鏡座照片與量尺照片。</div>
+</section>
+
+<section class="cta"><strong id="ctaName"></strong><span>把這個 STYLE 編號或款式名稱傳回給賣家即可。</span></section>
+</div>
+
+<div id="notfound"><h2>找不到這個款式</h2><p>請回到型錄重新選擇。</p></div>
+</main>
+
+<script>
+const products={
+blok:{no:"STYLE 01",name:"BLOK",img:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/Blok/pic/KiWAV-motorcycle-mirror-Blok-black-hero.webp",summary:"俐落的多邊形造型，重點在穩定結構與高調整度。適合想要運動感，但又不想犧牲實用性的車主。",chips:["26–55 mm","3 關節","M6","成對販售"],specs:[["鏡片","凸面鏡"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["固定螺絲","M6"],["包裝","左右一對"],["配件","25 / 40 mm M6 螺絲、墊片、螺帽、橡膠墊"]],points:["鏡座採齒盤式關節，可調整鏡臂角度。","鏡面另有球型關節，可微調後視角度。","此版本屬雙孔整流罩用可調底座。"]},
+emperor:{no:"STYLE 02",name:"EMPEROR",img:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/0pic/KiWAV-motorcycle-mirror-sportsbike-adapterS3-blk-02.jpg",summary:"這款最大的差異是四個調整關節。外觀看起來不複雜，但實際可調範圍很大，適合很在意鏡面位置的人。",chips:["26–55 mm","4 關節","凸面鏡","M6"],specs:[["鏡殼","強化 ABS + 鋁飾件"],["鏡臂","鋁合金"],["鏡片","Chrome convex lens"],["調整","4 個調整關節"],["安裝孔距","26–55 mm C2C"],["固定螺絲","M6"],["重量","約 725 g / 對"],["包裝","左右一對"]],points:["四個調整關節，是這幾款裡調整自由度特別高的一款。","鏡臂可旋轉，對不同騎姿較容易調到合適角度。","凸面鏡提供較寬後視範圍。"]},
+viper2:{no:"STYLE 03",name:"VIPER II",img:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/ViperIIS3/0housing2/Bblk/pic/KiWAV-motorcycle-mirror-viper2-Bblack-sportsbike-blk-02.jpg",summary:"稜角分明、偏跑格的造型。CNC 鋁件搭配強化 ABS，鏡面使用凸面鏡，兼顧視野與外觀。",chips:["26–55 mm","3 關節","凸面鏡","CNC 鋁件"],specs:[["鏡殼","CNC 鋁 + 強化 ABS"],["鏡臂","CNC 鋁"],["鏡片","Chrome convex lens"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["固定","雙孔整流罩"],["重量","約 540 g / 對"],["包裝","左右一對"]],points:["鑽石／多邊形鏡殼，造型較銳利。","球型關節可調鏡面角度。","較輕量，視覺上也比傳統大型原廠鏡更俐落。"]},
+palm2:{no:"STYLE 04",name:"PALM II",img:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/PalmII/pic/KiWAV-motorcycle-mirrors-PalmII-black-02.jpg",summary:"如果比較重視視野，PALM II 是這幾款裡值得先看的。它使用非球面鏡片，主打較寬的後視範圍。",chips:["26–55 mm","非球面鏡","3 關節","CNC 鋁"],specs:[["材質","CNC 鋁"],["鏡片","Chrome convex / aspheric lens"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["固定螺絲","M6"],["重量","約 946 g / 對"],["包裝","左右一對"],["配件","25 / 40 mm M6 螺絲與安裝五金"]],points:["非球面鏡片的特色是以較小鏡面提供較寬視野。","20 齒鏡座關節有利於固定調整角度。","鏡面另有球型關節，可做細部角度微調。"]},
+missie:{no:"STYLE 05",name:"MISSIE",img:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/MissieS3/pic/KiWAV-Magazi-Missie-motorcycle-mirrors-sportsbike-black.jpg",summary:"圓形鏡面、風格比較經典。鏡殼使用強化 ABS 搭配鋁件，鏡臂為 CNC 鋁，整體比純跑格造型更耐看。",chips:["26–55 mm","圓鏡","3 關節","凸面鏡"],specs:[["鏡殼","強化 ABS + 鋁件"],["鏡臂","CNC 鋁"],["鏡片","Chrome convex lens"],["形狀","圓形"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["重量","約 760 g / 對"],["固定螺絲","M6"]],points:["圓鏡造型較經典，適合不想要太尖銳跑格外觀的人。","鏡面可調，並搭配齒盤式鏡座。","配有 25 mm 與 40 mm 的 M6 安裝螺絲。"]},
+shield:{no:"STYLE 06",name:"SHIELD",img:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/Shield/stem/black/pic/KiWAV-motorcycle-mirrors-Shield-black-01-sportsbike.jpg",summary:"運動風格但鏡面面積不算極端小，鏡殼採強化 ABS 與鋁件搭配，三個調整關節方便配合不同車身姿勢。",chips:["26–55 mm","3 關節","凸面鏡","運動風格"],specs:[["鏡殼","強化 ABS + 鋁"],["鏡臂","CNC 鋁"],["鏡片","Chrome convex lens"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["包裝","左右一對"],["固定","雙孔整流罩"],["安裝","依車款仍需確認底座接觸面"]],points:["鏡面球型關節可用螺絲調整阻尼與角度。","齒盤式鏡座可做分段角度設定。","適合想要運動感，但不想選過小鏡面的車主。"]},
+zipper:{no:"STYLE 07",name:"ZIPPER",img:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/ZipperS3/pic/KiWAV-Zipper-motorcycle-mirrors-black-sportsbike-02.jpg",summary:"緊湊四邊形造型，鏡殼採強化 ABS 與鋁合金組合，三個調整關節，整體視覺比較輕巧。",chips:["26–55 mm","3 關節","凸面鏡","M6"],specs:[["鏡殼","強化 ABS + 鋁"],["鏡臂","CNC 鋁"],["鏡片","Chrome convex lens"],["形狀","四邊形"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["固定螺絲","M6"],["重量","約 740 g / 對"]],points:["20 齒鏡座關節可做分段式角度調整。","鏡面球型關節可再微調。","包裝包含 25 mm 與 40 mm M6 螺絲、螺帽、墊片及橡膠墊。"]}
+};
+
+const id=new URLSearchParams(location.search).get("id");
+const p=products[id];
+if(!p){document.getElementById("page").style.display="none";document.getElementById("notfound").style.display="block";}
+else{
+ document.title=p.name+" 後視鏡詳細資料";
+ document.getElementById("heroImg").src=p.img;
+ document.getElementById("heroImg").alt=p.name+" motorcycle mirror";
+ document.getElementById("styleNo").textContent=p.no;
+ document.getElementById("name").textContent=p.name;
+ document.getElementById("summary").textContent=p.summary;
+ document.getElementById("chips").innerHTML=p.chips.map(x=>'<span class="chip">'+x+'</span>').join("");
+ document.getElementById("specs").innerHTML=p.specs.map(x=>'<div class="row"><span>'+x[0]+'</span><span>'+x[1]+'</span></div>').join("");
+ document.getElementById("points").innerHTML=p.points.map(x=>'<li>'+x+'</li>').join("");
+ document.getElementById("ctaName").textContent="詢問賣家："+p.no+" "+p.name;
+}
+</script>
+</body>
+</html>
