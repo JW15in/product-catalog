@@ -59,12 +59,18 @@ a{text-decoration:none;color:inherit}.wrap{max-width:1080px;margin:auto;padding:
 <div class="modal" id="modal"><div class="close" id="close">×</div><img id="modalImg" alt=""></div>
 
 <script>
-function imgs(sku, fallback){
-  const a=[];
-  for(let i=1;i<=8;i++) a.push("https://cdn.kiwavmotors.com/products/images/main/"+sku+"__"+i+".jpg");
-  if(fallback) a.push(fallback);
-  return a;
-}
+function imgs(sku,fallback){
+    const a=[
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__k1.jpg",
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__1.jpg",
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__2.jpg",
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__3.jpg",
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__4.jpg",
+      "https://cdn.kiwavmotors.com/products/images/main/"+sku+"__k2.jpg"
+    ];
+    if(fallback)a.push(fallback);
+    return a;
+  }
 const products={
 blok:{price:3936,name:"BLOK",sku:"100116819600012",fallback:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/Blok/pic/KiWAV-motorcycle-mirror-Blok-black-hero.webp",summary:"俐落的多邊形造型，CNC 鋁合金鏡殼與鏡臂，重點在穩定結構與高調整度。",chips:["26–55 mm","3 關節","M6","凸面鏡"],specs:[["鏡殼","CNC 鋁合金"],["鏡臂","CNC 鋁合金"],["鏡片","Chrome convex lens"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["固定螺絲","M6"],["重量","約 608 g / 對"],["包裝","左右一對"]],points:["20 齒鎖定關節有助於固定鏡臂角度。","凸面鏡提供較寬後視範圍。","此版本為雙孔整流罩用可調底座。"]},
 emperor:{price:2568,name:"EMPEROR",sku:"100172619200403",fallback:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/0pic/KiWAV-motorcycle-mirror-sportsbike-adapterS3-blk-02.jpg",summary:"四個調整關節是這款最大的特色，鏡臂可旋轉，適合很在意鏡面位置與角度的人。",chips:["26–55 mm","4 關節","凸面鏡","M6"],specs:[["鏡殼","強化 ABS + 鋁飾件"],["鏡臂","鋁合金"],["鏡片","Chrome convex lens"],["調整","4 個調整關節"],["安裝孔距","26–55 mm C2C"],["固定螺絲","M6"],["重量","約 725 g / 對"],["包裝","左右一對"]],points:["四個調整關節，調整自由度特別高。","鏡臂可旋轉，方便配合不同騎姿。","凸面鏡提供較寬後視範圍。"]},
@@ -76,9 +82,9 @@ zipper:{price:3473,name:"ZIPPER",sku:"100133618680103",fallback:"https://cdn.kiw
 
 oval:{price:3118,name:"OVAL",sku:"100109618280103",summary:"橢圓形全鋁鏡殼，使用非球面凸面鏡，外觀乾淨、視野取向。",chips:["26–55 mm","非球面鏡","3 關節","CNC 鋁"],specs:[["材質","CNC 鋁"],["形狀","Oval"],["鏡片","Aspheric convex lens"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["固定螺絲","M6"],["重量","約 667 g / 對"],["包裝","左右一對"]],points:["非球面凸面鏡提供較寬視野。","鏡面與鏡座皆可調。","全鋁結構，外型簡潔。"]},
 retro:{price:2662,name:"RETRO",sku:"100111618480103",summary:"圓潤復古取向，適合不想要過度銳利跑格外觀的車主。",chips:["26–55 mm","復古造型","M6","雙孔整流罩"],specs:[["款式","Retro"],["安裝孔距","26–55 mm C2C"],["固定螺絲","M6"],["固定","雙孔整流罩"],["包裝","左右一對"]],points:["復古外型，比較適合老車或偏經典的整體風格。","使用可調式整流罩底座。","選購仍需確認原車鏡座曲面與安裝空間。"]},
-modern:{price:3192,name:"MODERN",sku:"100106618260103",fallback:"https://cdn.kiwavmotors.com/products/images/main/PARENT-01-1826NC-modern__1.jpg",summary:"方形全鋁鏡殼與藍色防眩凸面鏡，風格簡潔俐落。",chips:["26–55 mm","3 關節","藍色凸面鏡","CNC 鋁"],specs:[["材質","CNC 鋁"],["形狀","Square"],["鏡片","Blue tinted convex lens"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["重量","約 775 g / 對"],["固定螺絲","M6"],["包裝","左右一對"]],points:["藍色鏡片有助於降低眩光。","全鋁結構，沒有塑膠鏡殼。","鏡面尺寸較小，偏造型取向。"]},
+modern:{price:3192,name:"MODERN",sku:"100106618260103",summary:"方形全鋁鏡殼與藍色防眩凸面鏡，風格簡潔俐落。",chips:["26–55 mm","3 關節","藍色凸面鏡","CNC 鋁"],specs:[["材質","CNC 鋁"],["形狀","Square"],["鏡片","Blue tinted convex lens"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["重量","約 775 g / 對"],["固定螺絲","M6"],["包裝","左右一對"]],points:["藍色鏡片有助於降低眩光。","全鋁結構，沒有塑膠鏡殼。","鏡面尺寸較小，偏造型取向。"]},
 classicmx:{price:2028,name:"CLASSIC MX",sku:"100104618260103",summary:"低調的經典方形造型，尺寸緊湊，適合希望視覺簡潔的人。",chips:["26–55 mm","M6","低調造型","雙孔整流罩"],specs:[["款式","ClassicMX"],["安裝孔距","26–55 mm C2C"],["固定螺絲","M6"],["固定","雙孔整流罩"],["包裝","左右一對"]],points:["經典方形比例。","使用 26–55 mm 可調式底座。","較小鏡面以造型與低調感為主。"]},
-classicplus:{price:2278,name:"CLASSIC PLUS",sku:"100105618260103",fallback:"https://cdn.kiwavmotors.com/products/images/main/PARENT-01-1826-ClassicPlus__1.jpg",summary:"Classic 系列的加長版本，保留矩形外型，加入非球面鏡片改善視野。",chips:["26–55 mm","非球面鏡","矩形","M6"],specs:[["款式","Classic Plus"],["鏡片","Aspheric lens"],["安裝孔距","26–55 mm C2C"],["固定螺絲","M6"],["固定","雙孔整流罩"],["包裝","左右一對"]],points:["較長鏡臂有利於把鏡面帶到更外側。","非球面鏡片提升小鏡面下的視野。","適合喜歡傳統矩形鏡外型的人。"]},
+classicplus:{price:2278,name:"CLASSIC PLUS",sku:"100105618260103",summary:"Classic 系列的加長版本，保留矩形外型，加入非球面鏡片改善視野。",chips:["26–55 mm","非球面鏡","矩形","M6"],specs:[["款式","Classic Plus"],["鏡片","Aspheric lens"],["安裝孔距","26–55 mm C2C"],["固定螺絲","M6"],["固定","雙孔整流罩"],["包裝","左右一對"]],points:["較長鏡臂有利於把鏡面帶到更外側。","非球面鏡片提升小鏡面下的視野。","適合喜歡傳統矩形鏡外型的人。"]},
 cleaver2:{price:4030,name:"CLEAVER II",sku:"100188618850103",summary:"尺寸較大、全 CNC 鋁結構，搭配非球面凸面鏡，偏重視視野與結構感。",chips:["26–55 mm","非球面鏡","CNC 鋁","大型鏡面"],specs:[["材質","CNC 航太級鋁合金"],["鏡片","Aspheric convex lens"],["安裝孔距","26–55 mm C2C"],["固定螺絲","M6"],["固定","雙孔整流罩"],["包裝","左右一對"]],points:["鏡面較大，適合視野優先。","CNC 鋁合金結構，風格厚實。","關節採 stop-and-lock 設計。"]},
 lucifer:{price:3564,name:"LUCIFER",sku:"100149719000003",fallback:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/Lucifer/pic/KiWAV-Lucifer-motorcycle-mirrors-black-sportsbike-02.jpg",summary:"雙色 LED 整流罩後視鏡，白色位置燈搭配琥珀色方向燈，外型偏跑格。",chips:["雙色 LED","3 關節","凸面鏡","E-mark"],specs:[["鏡殼","ABS 塑料"],["鏡臂","鋁合金"],["鏡片","Chrome convex lens"],["LED","白色位置燈 + 琥珀色方向燈"],["防護","IP67 LED module"],["調整","3 個調整關節"],["重量","約 700 g / 對"],["包裝","左右一對"]],points:["雙色 LED 可作為位置燈與方向燈。","LED 模組具 IP67 防塵防水規格。","凸面鏡提供較寬後視範圍。"]},
 mamba:{price:4536,name:"MAMBA",sku:"100113519430041",fallback:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/Mamba/pic/KiWAV-Mamba-matte-carbon-motorcycle-mirrors-sportsbike-02.jpg",summary:"霧面真碳纖維鏡殼搭配霧黑鋁合金鏡臂，薄型、輕量，屬運動感較強的高質感版本。",chips:["Carbon","3 關節","凸面鏡","E-mark"],specs:[["鏡殼","Real carbon fiber + machined aluminum"],["鏡臂","Aluminum"],["鏡片","Chrome convex lens"],["表面","Matte carbon"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["包裝","左右一對"]],points:["真碳纖維薄型鏡殼。","重量低於一般全鋁鏡。","霧面碳纖維搭配霧黑鏡臂。"]},
