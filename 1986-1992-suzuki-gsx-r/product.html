@@ -132,5 +132,32 @@ else{
 document.getElementById("close").onclick=()=>document.getElementById("modal").classList.remove("open");
 document.getElementById("modal").onclick=e=>{if(e.target.id==="modal")e.currentTarget.classList.remove("open");};
 </script>
-</body>
+<script>
+async function loadDetailConfig(){
+  try{
+    const r=await fetch("config.json",{cache:"no-store"});
+    if(!r.ok) return;
+    const cfg=await r.json();
+    const id=new URLSearchParams(location.search).get("id");
+    if(cfg.products && cfg.products[id]===false){
+      document.getElementById("page").style.display="none";
+      document.getElementById("notfound").style.display="block";
+      document.getElementById("notfound").innerHTML="<h2>此款目前未顯示</h2><p><a href='index.html'>← 回到型錄</a></p>";
+      return;
+    }
+    if(cfg.enableZoom===false){
+      const note=document.querySelector(".zoom-note");
+      if(note) note.style.display="none";
+      const main=document.getElementById("mainPhoto");
+      if(main){
+        main.style.cursor="default";
+        main.onclick=null;
+      }
+      const modal=document.getElementById("modal");
+      if(modal) modal.remove();
+    }
+  }catch(e){}
+}
+loadDetailConfig();
+</script></body>
 </html>
