@@ -1,0 +1,25 @@
+{
+  "products": {
+    "blok": true,
+    "emperor": true,
+    "viper2": true,
+    "palm2": true,
+    "missie": true,
+    "shield": true,
+    "zipper": true,
+    "oval": true,
+    "retro": true,
+    "modern": true,
+    "classicmx": true,
+    "classicplus": true,
+    "cleaver2": true,
+    "lucifer": true,
+    "mamba": true,
+    "mambaround": true,
+    "ellipse": true,
+    "viper": true,
+    "stark": true,
+    "panther": true
+  },
+  "enableZoom": true
+}
