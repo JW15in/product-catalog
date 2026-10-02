@@ -157,7 +157,7 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
 </a>
 <a class="card" href="product.html?id=modern">
   <div class="photo">
-    <img loading="lazy" src="https://cdn.kiwavmotors.com/products/images/main/PARENT-01-1826NC-modern__1.jpg" alt="MODERN motorcycle mirror">
+    <img loading="lazy" src="https://cdn.kiwavmotors.com/products/images/main/100106618260103__k1.jpg" data-sources='["https://cdn.kiwavmotors.com/products/images/main/100106618260103__k1.jpg","https://cdn.kiwavmotors.com/products/images/main/100106618260103__1.jpg","https://cdn.kiwavmotors.com/products/images/main/100106618260103__2.jpg","https://cdn.kiwavmotors.com/products/images/main/100106618260103__3.jpg","https://cdn.kiwavmotors.com/products/images/main/100106618260103__k2.jpg"]' data-source-index="0" alt="MODERN motorcycle mirror" onerror="cycleImageSource(this)">
     <div class="img-placeholder">PHOTO</div>
     <span class="badge">10</span>
   </div>
@@ -184,7 +184,7 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
 </a>
 <a class="card" href="product.html?id=classicplus">
   <div class="photo">
-    <img loading="lazy" src="https://cdn.kiwavmotors.com/products/images/main/PARENT-01-1826-ClassicPlus__1.jpg" alt="CLASSIC PLUS motorcycle mirror">
+    <img loading="lazy" src="https://cdn.kiwavmotors.com/products/images/main/100105618260103__k1.jpg" data-sources='["https://cdn.kiwavmotors.com/products/images/main/100105618260103__k1.jpg","https://cdn.kiwavmotors.com/products/images/main/100105618260103__1.jpg","https://cdn.kiwavmotors.com/products/images/main/100105618260103__2.jpg","https://cdn.kiwavmotors.com/products/images/main/100105618260103__3.jpg","https://cdn.kiwavmotors.com/products/images/main/100105618260103__k2.jpg"]' data-source-index="0" alt="CLASSIC PLUS motorcycle mirror" onerror="cycleImageSource(this)">
     <div class="img-placeholder">PHOTO</div>
     <span class="badge">12</span>
   </div>
@@ -227,4 +227,13 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
   </div>
 </a></section>
 
-<div class="foot">1986–1992 Suzuki GSX-R mirror catalog</div></main></body></html>
+<div class="foot">1986–1992 Suzuki GSX-R mirror catalog</div></main><script>
+function cycleImageSource(img){
+  try{
+    const sources=JSON.parse(img.dataset.sources||"[]");
+    let i=parseInt(img.dataset.sourceIndex||"0",10)+1;
+    if(i<sources.length){img.dataset.sourceIndex=String(i);img.src=sources[i];return;}
+  }catch(e){}
+  img.style.display="none";
+}
+</script></body></html>
