@@ -1,0 +1,60 @@
+name: Inspect KiWAV catalog source
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/catalog-source-check.yml'
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'beautifulsoup4>=4.12,<5' 'requests>=2.32.4,<3'
+      - name: Read public source markup without changing any catalog
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, requests
+          from bs4 import BeautifulSoup
+          urls = {
+            'search': 'https://kiwavmotors.com/en/search-result?q=Cls_FAD-10&start=0',
+            'emperor': 'https://kiwavmotors.com/en/mirrors/fairing-sportsbike/emperor-black-fairing-mount-mirrors-w-black-adapter-for-sportsbike-detail',
+            'palm': 'https://kiwavmotors.com/en/mirrors/fairing-sportsbike/palmii-black-mirrors-fairing-mount-with-black-adapter-detail'
+          }
+          out = Path('source-inspection'); out.mkdir()
+          session = requests.Session()
+          session.headers['User-Agent'] = 'KiWAVCatalogGenerator/1.0 (owner-authorized source inspection)'
+          for key, url in urls.items():
+              r = session.get(url, timeout=(15, 60)); r.raise_for_status()
+              r.encoding = r.apparent_encoding
+              (out / (key + '.html')).write_text(r.text, encoding='utf-8')
+              soup = BeautifulSoup(r.text, 'html.parser')
+              print('\nSOURCE', key, r.status_code, r.url)
+              if key == 'search':
+                  a = next((a for a in soup.select('h2 a, h3 a') if '-detail' in a.get('href','')), None)
+                  if a:
+                      for parent in list(a.parents)[:5]:
+                          print('ANCESTOR', parent.name, parent.attrs)
+                      p = a
+                      for _ in range(4): p = p.parent
+                      print('FIRST CARD MARKUP', str(p)[:20000])
+                  print('PAGINATION', [str(n) for n in soup.select('.pagination, .vm-pagination')])
+              else:
+                  for selector in ['h1', '.product-price', '[itemprop="offers"]', '.main-image', '.additional-images', '.product-description', '#product-description', '.product-fields', '.product-short-description']:
+                      nodes = soup.select(selector)
+                      print('SELECTOR', selector, 'COUNT', len(nodes))
+                      for n in nodes[:2]: print(str(n)[:22000])
+                  print('JSONLD', [s.get_text() for s in soup.select('script[type="application/ld+json"]')])
+                  print('IMAGE ELEMENTS', [str(n) for n in soup.select('img') if '/products/' in str(n) or '/kiwavebay/' in str(n)])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kiwav-source-inspection
+          path: source-inspection/
+          retention-days: 7
