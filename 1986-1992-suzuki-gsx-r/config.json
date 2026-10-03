@@ -19,7 +19,10 @@
     "ellipse": true,
     "viper": true,
     "stark": true,
-    "panther": false
+    "panther": false,
+    "venom": true,
+    "redline": true,
+    "hawk": true
   },
   "enableZoom": true,
   "showWeight": false
