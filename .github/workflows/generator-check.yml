@@ -1,0 +1,24 @@
+name: Check catalog generator
+
+on:
+  push:
+    paths:
+      - 'generator/**'
+      - '.github/workflows/generator-check.yml'
+  pull_request:
+    paths:
+      - 'generator/**'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m py_compile generator/generate_catalog.py
+      - run: python -m unittest discover -s generator/tests -v
