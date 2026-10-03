@@ -1,6 +1,46 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Ninja 650 EX650 (2006–2016) 後視鏡型錄｜測試</title><style>
-:root{--bg:#f5f6f7;--card:#fff;--ink:#17181a;--muted:#666b73;--line:#e1e4e8;--dark:#171a20;--soft:#eef1f4}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif}a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:20px 16px 60px}.top{background:linear-gradient(135deg,#12151a,#252a33);color:#fff;border-radius:24px;padding:30px 26px;margin-bottom:16px}.eyebrow{font-size:12px;letter-spacing:.16em;color:#bfc5ce;font-weight:850}.top h1{font-size:clamp(30px,5vw,48px);line-height:1.08;margin:8px 0 10px}.top p{margin:0;max-width:790px;line-height:1.65;color:#dde1e7}.notice{background:#fff;border:1px solid var(--line);border-radius:17px;padding:16px 18px;line-height:1.65;margin-bottom:22px}.notice strong{display:block;margin-bottom:4px}.catalog-head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin:24px 2px 12px}.catalog-head h2{margin:0;font-size:24px}.catalog-head span{font-size:13px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;align-items:start}.card{display:block;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.035);transition:.15s}.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.085)}.photo{position:relative;background:#fff;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo img{width:90%;height:90%;object-fit:contain}.badge,.sold{position:absolute;z-index:3;top:12px;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:850}.badge{left:12px;background:rgba(18,20,24,.86);color:#fff}.sold{right:12px;background:#fff0f0;color:#a32626;border:1px solid #f1caca}.body{padding:15px}.name{font-size:20px;font-weight:850;line-height:1.25}.desc{font-size:13.5px;color:#555b63;line-height:1.55;margin-top:8px}.price{font-size:20px;font-weight:900;margin-top:10px}.foot{margin-top:16px;color:#717780;font-size:12.5px;text-align:center;line-height:1.6}@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.wrap{padding:10px 10px 42px}.top{border-radius:17px;padding:23px 18px}.grid{grid-template-columns:1fr}.catalog-head{align-items:flex-start;flex-direction:column}.photo{aspect-ratio:16/10}}
-</style></head><body><main class="wrap"><section class="top"><div class="eyebrow">MOTORCYCLE MIRROR CATALOG · TEST</div><h1>Ninja 650 EX650（2006–2016）</h1><p>依 KiWAV 搜尋結果第 1 頁建立的測試型錄。點進款式可查看基本資訊與目前可取得的圖片。</p></section><section class="notice"><strong>Fitment / 測試範圍</strong>Ninja 650 EX650（2006–2016）｜目前僅使用搜尋結果第 1 頁，並非完整 7 頁型錄。</section><div class="catalog-head"><h2>可參考款式</h2><span id="productCount"></span></div><section class="grid" id="grid"></section><div class="foot">價格依測試公式 USD × 30 × 0.8 換算為 NT$；實際規格與庫存請於確認款式後再核對。</div></main><script>
-const money=n=>'NT$'+Number(n).toLocaleString('zh-TW');function info(n){n=n.toLowerCase();const install=n.includes('fairing mount')?'整流罩固定式':'M8 內牙車把端安裝';const feature=n.includes('heavy weight')?'重型配重款':(n.includes('weight')?'配重型':'車把端款');const pack=n.includes('mirrors')?'一對':(n.includes(' rh ')?'右側單支':(n.includes(' lh ')?'左側單支':'單支'));return install+'・'+feature+'・'+pack}
-Promise.all([fetch('products.json').then(r=>r.json()),fetch('config.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.json()).catch(()=>({}))]).then(([ps,cfg])=>{let visible=0;const g=document.getElementById('grid');ps.forEach((p,i)=>{if(cfg.products&&cfg.products[p.id]===false)return;if(p.soldOut&&cfg.showSoldOut===false)return;visible++;const a=document.createElement('a');a.className='card';a.href='product.html?id='+encodeURIComponent(p.id);a.innerHTML=`<div class="photo"><img loading="lazy" src="${p.images[0]||''}" alt="${p.name}"><span class="badge">${String(i+1).padStart(2,'0')}</span>${p.soldOut?'<span class="sold">Sold Out</span>':''}</div><div class="body"><div class="name">${p.displayName||p.name}</div><div class="desc">${info(p.name)}</div><div class="price">${money(p.ntd)}</div></div>`;g.appendChild(a)});document.getElementById('productCount').textContent='共 '+visible+' 款';});
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Ninja 650 EX650（2006–2016）後視鏡款式型錄</title>
+<meta name="description" content="Ninja 650 EX650（2006–2016）後視鏡款式參考">
+<style>
+:root{--bg:#f5f6f7;--card:#fff;--ink:#17181a;--muted:#666b73;--line:#e1e4e8;--dark:#171a20;--soft:#eef1f4}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif}
+a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:20px 16px 60px}
+.top{background:linear-gradient(135deg,#12151a,#252a33);color:#fff;border-radius:24px;padding:30px 26px;margin-bottom:16px}
+.eyebrow{font-size:12px;letter-spacing:.16em;color:#bfc5ce;font-weight:850}.top h1{font-size:clamp(30px,5vw,48px);line-height:1.08;margin:8px 0 10px}.top p{margin:0;max-width:790px;line-height:1.65;color:#dde1e7}
+.notice{background:#fff;border:1px solid var(--line);border-radius:17px;padding:16px 18px;line-height:1.65;margin-bottom:22px}
+.notice strong{display:block;margin-bottom:4px}.catalog-head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin:24px 2px 12px}.catalog-head h2{margin:0;font-size:24px}.catalog-head span{font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;align-items:start;grid-auto-rows:max-content}.card{display:block;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.035);transition:.15s;height:fit-content!important;min-height:0!important;align-self:start}.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.085)}
+.photo{position:relative;background:#fff;min-height:220px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo img{display:block;width:90%;height:90%;object-fit:contain;position:relative;z-index:2}.img-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#a1a6ad;font-size:12px;font-weight:850;letter-spacing:.14em}.badge{position:absolute;z-index:3;left:12px;top:12px;background:rgba(18,20,24,.86);color:#fff;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:850}.sold{position:absolute;z-index:3;right:12px;top:12px;background:#fff0f0;color:#a32626;border:1px solid #f1caca;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:850}
+.body{padding:15px}.name-row{display:flex;justify-content:space-between;align-items:center;gap:8px}.name{font-size:21px;font-weight:850}.arrow{font-size:20px;color:#777e87}.tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.tag{background:var(--soft);padding:5px 8px;border-radius:7px;font-size:12px;color:#454a51}.desc{font-size:13.5px;color:#555b63;line-height:1.55;min-height:42px}.price{font-size:20px;font-weight:900;margin-top:10px;color:#17181a}
+.foot{margin-top:16px;color:#717780;font-size:12.5px;line-height:1.6;text-align:center}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.wrap{padding:10px 10px 42px}.top{border-radius:17px;padding:23px 18px}.grid{display:flex;flex-direction:column;gap:12px}.card{width:100%;height:auto!important;min-height:0!important}.body{height:auto!important;min-height:0!important}.catalog-head{align-items:flex-start;flex-direction:column}.photo{min-height:0;aspect-ratio:16/10}.photo img{width:90%;height:90%;object-fit:contain}.desc{min-height:0}}
+</style>
+</head>
+<body><main class="wrap">
+<section class="top"><div class="eyebrow">MOTORCYCLE MIRROR CATALOG</div><h1>Ninja 650 EX650（2006–2016）適用</h1><p>以下為此車型可參考的後視鏡款式。點進每一款可以看更多角度照片、主要規格、款式重點與價格。</p></section>
+<section class="notice"><strong>Fitment</strong>Ninja 650 EX650（2006–2016）｜目前為搜尋結果第 1 頁測試版</section>
+<div class="catalog-head"><h2>可參考款式</h2><span id="productCount"></span></div>
+<section class="grid" id="grid"></section>
+<div class="foot">價格依 USD × 30 × 0.8 換算為 NT$。本頁目前僅使用搜尋結果第 1 頁，尚非完整 7 頁型錄。</div>
+</main>
+<script>
+const money=n=>'NT$'+Number(n).toLocaleString('zh-TW');
+Promise.all([fetch('products.json').then(r=>r.json()),fetch('config.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.json()).catch(()=>({}))]).then(([ps,cfg])=>{
+  const g=document.getElementById('grid');let visible=0;
+  ps.forEach((p,i)=>{
+    if(cfg.products&&cfg.products[p.id]===false)return;
+    if(p.soldOut&&cfg.showSoldOut===false)return;
+    visible++;
+    const tags=(p.chips||[]).slice(0,4).map(x=>'<span class="tag">'+x+'</span>').join('');
+    const a=document.createElement('a');a.className='card';a.dataset.product=p.id;a.href='product.html?id='+encodeURIComponent(p.id);
+    a.innerHTML=`<div class="photo"><img loading="lazy" src="${(p.images&&p.images[0])||''}" alt="${p.shortName||p.name} motorcycle mirror"><div class="img-placeholder">PHOTO</div><span class="badge">${String(i+1).padStart(2,'0')}</span>${p.soldOut?'<span class="sold">Sold Out</span>':''}</div><div class="body"><div class="name-row"><div class="name">${p.shortName||p.name}</div><div class="arrow">→</div></div><div class="tags">${tags}</div><div class="desc">${p.summary||''}</div><div class="price">${money(p.ntd)}</div></div>`;
+    g.appendChild(a);
+  });
+  document.getElementById('productCount').textContent='共'+visible+'款';
+});
 </script></body></html>
