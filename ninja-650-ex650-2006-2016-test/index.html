@@ -23,10 +23,10 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:
 </head>
 <body><main class="wrap">
 <section class="top"><div class="eyebrow">MOTORCYCLE MIRROR CATALOG</div><h1>Ninja 650 EX650（2006–2016）適用</h1><p>以下為此車型可參考的後視鏡款式。點進每一款可以看更多角度照片、主要規格、款式重點與價格。</p></section>
-<section class="notice"><strong>Fitment</strong>Ninja 650 EX650（2006–2016）｜目前為搜尋結果第 1 頁測試版</section>
+<section class="notice"><strong>Fitment</strong>Ninja 650 EX650（2006–2016）</section>
 <div class="catalog-head"><h2>可參考款式</h2><span id="productCount"></span></div>
 <section class="grid" id="grid"></section>
-<div class="foot">價格依 USD × 30 × 0.8 換算為 NT$。本頁目前僅使用搜尋結果第 1 頁，尚非完整 7 頁型錄。</div>
+<div class="foot">Ninja 650 EX650（2006–2016）mirror catalog · 測試版（搜尋結果第 1 頁）</div>
 </main>
 <script>
 const money=n=>'NT$'+Number(n).toLocaleString('zh-TW');
@@ -38,7 +38,7 @@ Promise.all([fetch('products.json').then(r=>r.json()),fetch('config.json?ts='+Da
     visible++;
     const tags=(p.chips||[]).slice(0,4).map(x=>'<span class="tag">'+x+'</span>').join('');
     const a=document.createElement('a');a.className='card';a.dataset.product=p.id;a.href='product.html?id='+encodeURIComponent(p.id);
-    a.innerHTML=`<div class="photo"><img loading="lazy" src="${(p.images&&p.images[0])||''}" alt="${p.shortName||p.name} motorcycle mirror"><div class="img-placeholder">PHOTO</div><span class="badge">${String(i+1).padStart(2,'0')}</span>${p.soldOut?'<span class="sold">Sold Out</span>':''}</div><div class="body"><div class="name-row"><div class="name">${p.shortName||p.name}</div><div class="arrow">→</div></div><div class="tags">${tags}</div><div class="desc">${p.summary||''}</div><div class="price">${money(p.ntd)}</div></div>`;
+    a.innerHTML=`<div class="photo"><img loading="lazy" src="${(p.images&&p.images[0])||''}" alt="${p.shortName||p.name} motorcycle mirror"><div class="img-placeholder">PHOTO</div><span class="badge">${String(i+1).padStart(2,'0')}</span>${p.soldOut?'<span class="sold">已售罄</span>':''}</div><div class="body"><div class="name-row"><div class="name">${p.shortName||p.name}</div><div class="arrow">→</div></div><div class="tags">${tags}</div><div class="desc">${p.summary||''}</div><div class="price">${money(p.ntd)}</div></div>`;
     g.appendChild(a);
   });
   document.getElementById('productCount').textContent='共'+visible+'款';
