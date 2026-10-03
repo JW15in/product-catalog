@@ -21,5 +21,6 @@
     "stark": true,
     "panther": true
   },
-  "enableZoom": false
+  "enableZoom": false,
+  "showWeight": true
 }
