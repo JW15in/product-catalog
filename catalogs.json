@@ -19,5 +19,12 @@
     "path": "ninja-650-generator-proof",
     "locked": false,
     "legacy": false
+  },
+  {
+    "id": "2018-triumph-thruxton-1200",
+    "name": "2018 Triumph Thruxton 1200",
+    "path": "2018-triumph-thruxton-1200",
+    "locked": false,
+    "legacy": false
   }
 ]
