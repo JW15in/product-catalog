@@ -30,5 +30,6 @@
   },
   "showSoldOut": true,
   "enableZoom": true,
-  "showWeight": false
+  "showWeight": false,
+  "detailImageLimit": 0
 }
