@@ -37,7 +37,6 @@ a{text-decoration:none;color:inherit}.wrap{max-width:1080px;margin:auto;padding:
   <div class="thumbs" id="thumbs"></div>
 </div>
 <div class="info">
-<div class="eyebrow" id="eyebrow"></div>
 <h1 id="name"></h1>
 <div class="summary" id="summary"></div><div class="pricebox" id="price"></div>
 <div class="chips" id="chips"></div>
@@ -46,7 +45,7 @@ a{text-decoration:none;color:inherit}.wrap{max-width:1080px;margin:auto;padding:
 </section>
 <section class="section"><h2>規格</h2><div class="specs" id="specs"></div></section>
 <section class="section"><h2>這款的重點</h2><ul class="points" id="points"></ul></section>
-<section class="section"><h2>Fitment</h2><div class="fitbox">Ninja 650 EX650（2006–2016）</div><div class="warn">此測試版目前僅依搜尋結果第 1 頁建立；完整規格與最終適用性可在選定款式後再確認。</div></section>
+<section class="section"><h2>Fitment</h2><div class="fitbox">Ninja 650 EX650（2006–2016）</div></section>
 </div>
 <div id="notfound"><h2>找不到這個款式</h2><p>請回到型錄重新選擇。</p></div>
 </main>
@@ -70,8 +69,7 @@ Promise.all([fetch('products.json').then(r=>r.json()),fetch('config.json?ts='+Da
     document.getElementById('page').style.display='none';document.getElementById('notfound').style.display='block';return;
   }
   document.title=(p.shortName||p.name)+'｜後視鏡詳細資料';
-  document.getElementById('eyebrow').textContent=p.soldOut?'SOLD OUT':'MOTORCYCLE MIRROR';
-  document.getElementById('name').textContent=p.shortName||p.name;
+    document.getElementById('name').textContent=p.shortName||p.name;
   document.getElementById('summary').textContent=p.summary||'';
   document.getElementById('price').textContent=money(p.ntd);
   document.getElementById('chips').innerHTML=(p.chips||[]).map(x=>'<span class="chip">'+x+'</span>').join('');
