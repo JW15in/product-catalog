@@ -339,7 +339,7 @@ def update_registry(path: Path, slug: str, name: str) -> None:
             break
     else:
         data.append({"id": slug, "name": name, "path": slug, "locked": False, "legacy": False})
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def main() -> int:
@@ -375,8 +375,8 @@ def main() -> int:
     }
     (target / "index.html").write_text(render_template(index_template, values), encoding="utf-8")
     (target / "product.html").write_text(render_template(product_template, values), encoding="utf-8")
-    (target / "products.json").write_text(json.dumps(products, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    (target / "config.json").write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (target / "products.json").write_text(json.dumps(products, ensure_ascii=False, indent=2), encoding="utf-8")
+    (target / "config.json").write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding="utf-8")
 
     if not args.no_register:
         registry = repo / "catalogs.json"
