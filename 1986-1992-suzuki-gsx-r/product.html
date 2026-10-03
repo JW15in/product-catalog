@@ -99,7 +99,7 @@ mamba:{price:4536,name:"MAMBA",sku:"100113519430041",fallback:"https://cdn.kiwav
 mambaround:{price:4536,name:"MAMBA ROUND",sku:"100107519420041",fallback:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/MambaRound/pic/KiWAV-Mamba-round-matte-carbon-motorcycle-mirrors-sportsbike-02.jpg",summary:"Mamba 的圓形版本，霧面碳纖維鏡殼搭配霧黑鋁臂，保留三關節高調整度。",chips:["Carbon","3 關節","圓鏡","E-mark"],specs:[["鏡殼","Real carbon fiber + machined aluminum"],["鏡臂","Aluminum"],["形狀","Round"],["鏡片","Chrome convex lens"],["表面","Matte carbon"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"]],points:["圓形碳纖維鏡面。","薄型輕量設計。","霧面碳纖維搭配霧黑鏡臂。"]},
 ellipse:{price:3017,name:"ELLIPSE",sku:"100112618490103",fallback:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/Ellipse/pic/KiWAV-motorcycle-mirrors-Ellipse-black-sportsbike-02.jpg",summary:"黑色全鋁橢圓鏡搭配黑色 adapter，整體簡潔，不使用混色組合。",chips:["Black + Black","3 關節","凸面鏡","CNC 鋁"],specs:[["材質","CNC milled aluminum"],["形狀","Oval"],["鏡片","Chrome convex lens"],["顏色","Black mirror + black adapter"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["包裝","左右一對"]],points:["全鋁鏡殼。","黑鏡＋黑 adapter 同色組合。","E-mark approved。"]},
 viper:{price:2508,name:"VIPER",sku:"100121618670103",fallback:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/Viper/pic/KiWAV-Viper-black-motorcycle-mirrors-sportsbike-02.jpg",summary:"Viper 系列黑色鏡＋黑色 adapter 版本，造型偏銳利跑格。",chips:["Black + Black","3 關節","凸面鏡"],specs:[["顏色","Black mirror + black adapter"],["鏡片","Convex lens"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["包裝","左右一對"]],points:["保留黑鏡＋黑 adapter，同色組合。","跑格鏡殼。","可調式 fairing 底座。"]},
-stark:{price:2357,name:"STARK",sku:"100138618500103",fallback:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/Stark/pic/KiWAV-Stark-black-motorcycle-mirrors-sportsbike-02.jpg",summary:"Stark 黑色鏡＋黑色 adapter 版本，全鋁橢圓造型，強調穩定與視野。",chips:["Black + Black","3 關節","凸面鏡","CNC 鋁"],specs:[["材質","CNC milled aluminum"],["鏡片","Chrome convex lens"],["顏色","Black mirror + matte black adapter"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["包裝","左右一對"]],points:["全鋁結構。","黑色同色組合。","可調式鏡面與鏡座。"]},
+stark:{price:2357,name:"STARK",sku:"100138618500103",fallback:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/Stark/pic/KiWAV-Stark-black-motorcycle-mirrors-sportsbike-02.jpg",summary:"Stark 黑色鏡＋黑色 adapter 版本，全鋁橢圓造型，強調穩定與視野。",chips:["Black + Black","3 關節","凸面鏡","CNC 鋁"],specs:[["材質","CNC milled aluminum"],["鏡片","Chrome convex lens"],["顏色","Black mirror + matte black adapter"],["調整","3 個調整關節"],["重量","約 665 g / 對"],["安裝孔距","26–55 mm C2C"],["包裝","左右一對"]],points:["全鋁結構。","黑色同色組合。","可調式鏡面與鏡座。"]},
 panther:{price:15576,name:"PANTHER",sku:"100103519120039",fallback:"https://cdn.kiwav.com/kiwavebay/product/01/mirror/Panther/pic/KiWAV-Panther-carbon-fiber-motorcycle-mirrors-sportsbike-02.jpg",summary:"100% 碳纖維鏡殼，藍色凸面鏡，屬這批 fairing mount 裡定位最高的碳纖維款。",chips:["100% Carbon","3 關節","藍色凸面鏡","E-mark"],specs:[["鏡殼","100% carbon fiber"],["鏡臂","Aluminum"],["形狀","Diamond"],["鏡片","Blue tinted convex lens"],["調整","3 個調整關節"],["安裝孔距","26–55 mm C2C"],["重量","約 625 g / 對"],["包裝","左右一對"]],points:["鏡殼本體為 100% 碳纖維。","藍色凸面鏡。","專利 adjust-and-stop PTFE 關節。"]}
 };
 
@@ -145,6 +145,12 @@ async function loadDetailConfig(){
       document.getElementById("notfound").innerHTML="<h2>此款目前未顯示</h2><p><a href='index.html'>← 回到型錄</a></p>";
       return;
     }
+    document.querySelectorAll("#specs .row").forEach(row=>{
+      const label=row.querySelector("span:first-child");
+      if(label && label.textContent.trim()==="重量"){
+        row.style.display=(cfg.showWeight===false)?"none":"flex";
+      }
+    });
     if(cfg.enableZoom===false){
       const note=document.querySelector(".zoom-note");
       if(note) note.style.display="none";
