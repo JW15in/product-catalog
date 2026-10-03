@@ -75,17 +75,29 @@ Promise.all([fetch('products.json').then(r=>r.json()),fetch('config.json?ts='+Da
   document.getElementById('chips').innerHTML=(p.chips||[]).map(x=>'<span class="chip">'+x+'</span>').join('');
   document.getElementById('specs').innerHTML=(p.specs||[]).map(x=>'<div class="row"><span>'+x[0]+'</span><span>'+x[1]+'</span></div>').join('');
   document.getElementById('points').innerHTML=(p.points||[]).map(x=>'<li>'+x+'</li>').join('');
-  const hero=document.getElementById('heroImg'),thumbs=document.getElementById('thumbs');let loaded=0;
-  imgs(p).forEach((src,i)=>{
-    const b=document.createElement('button');b.className='thumb';
-    const im=document.createElement('img');im.src=src;im.alt=(p.shortName||p.name)+' photo '+(i+1);
-    im.onload=()=>{loaded++;if(!hero.src||hero.dataset.empty==='1'){hero.src=src;hero.dataset.empty='0';b.classList.add('active')}};
-    im.onerror=()=>{b.remove();if(hero.src===src)hero.dataset.empty='1'};
-    b.appendChild(im);
-    b.onclick=()=>{hero.src=src;document.querySelectorAll('.thumb').forEach(x=>x.classList.remove('active'));b.classList.add('active')};
-    thumbs.appendChild(b);
-  });
+  const hero=document.getElementById('heroImg'),thumbs=document.getElementById('thumbs');
+  const limit=Number(cfg.detailImageLimit||0);
+  const candidates=imgs(p);
   hero.dataset.empty='1';
+  let shown=0;
+  function tryImage(i){
+    if(i>=candidates.length || (limit>0 && shown>=limit)) return;
+    const src=candidates[i];
+    const im=new Image();
+    im.onload=()=>{
+      const b=document.createElement('button');b.className='thumb';
+      const t=document.createElement('img');t.src=src;t.alt=(p.shortName||p.name)+' photo '+(shown+1);
+      b.appendChild(t);
+      b.onclick=()=>{hero.src=src;document.querySelectorAll('.thumb').forEach(x=>x.classList.remove('active'));b.classList.add('active')};
+      thumbs.appendChild(b);
+      if(!hero.src||hero.dataset.empty==='1'){hero.src=src;hero.dataset.empty='0';b.classList.add('active')}
+      shown++;
+      tryImage(i+1);
+    };
+    im.onerror=()=>tryImage(i+1);
+    im.src=src;
+  }
+  tryImage(0);
   document.getElementById('mainPhoto').onclick=()=>{if(cfg.enableZoom!==false&&hero.src){document.getElementById('modalImg').src=hero.src;document.getElementById('modal').classList.add('open')}};
   if(cfg.enableZoom===false){const note=document.querySelector('.zoom-note');if(note)note.style.display='none';document.getElementById('mainPhoto').style.cursor='default'}
   if(cfg.showWeight===false){document.querySelectorAll('#specs .row').forEach(row=>{const label=row.querySelector('span:first-child');if(label&&label.textContent.trim()==='重量')row.style.display='none'})}
