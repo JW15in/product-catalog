@@ -9,6 +9,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819670030__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819670030__2_280x280.jpg"
+    ],
+    "sku": "100116819670030",
+    "displayName": "WISP 黑色 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "黑色",
+    "variant": "標準車把端款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -21,6 +33,19 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819630023__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819630023__2_280x280.jpg"
+    ],
+    "sku": "100116819630023",
+    "displayName": "MAMBAX 亮面碳纖維 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "亮面碳纖維",
+    "variant": "標準車把端款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "亮面碳纖維外觀版本。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -33,6 +58,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819600026__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819600026__10_280x280.jpg"
+    ],
+    "sku": "100116819600026",
+    "displayName": "BLOK 黑色 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "黑色",
+    "variant": "標準車把端款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -45,6 +82,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/990105219570803__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/990105219570803__9_280x280.jpg"
+    ],
+    "sku": "990105219570803",
+    "displayName": "ORBII 黑色 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "黑色",
+    "variant": "標準車把端款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -57,6 +106,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819670066__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819670066__2_280x280.jpg"
+    ],
+    "sku": "100116819670066",
+    "displayName": "WISP 黑色 M8 車把端後視鏡（右側單支）",
+    "install": "M8 內牙車把端",
+    "package": "右側單支",
+    "finish": "黑色",
+    "variant": "標準車把端款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為右側單支。"
     ]
   },
   {
@@ -69,6 +130,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819670048__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819670048__2_280x280.jpg"
+    ],
+    "sku": "100116819670048",
+    "displayName": "WISP 黑色 M8 車把端後視鏡（左側單支）",
+    "install": "M8 內牙車把端",
+    "package": "左側單支",
+    "finish": "黑色",
+    "variant": "標準車把端款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為左側單支。"
     ]
   },
   {
@@ -81,6 +154,19 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819630041__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819630041__2_280x280.jpg"
+    ],
+    "sku": "100116819630041",
+    "displayName": "MAMBAX 亮面碳纖維 M8 車把端後視鏡（單支）",
+    "install": "M8 內牙車把端",
+    "package": "單支",
+    "finish": "亮面碳纖維",
+    "variant": "標準車把端款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "亮面碳纖維外觀版本。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為單支。"
     ]
   },
   {
@@ -93,6 +179,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819600012__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819600012__7_280x280.jpg"
+    ],
+    "sku": "100116819600012",
+    "displayName": "BLOK 黑色 整流罩後視鏡（一對）",
+    "install": "整流罩固定式",
+    "package": "左右一對",
+    "finish": "黑色",
+    "variant": "整流罩後視鏡",
+    "thread": "依商品頁確認",
+    "points": [
+      "此版本為整流罩固定式後視鏡。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -105,6 +203,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819600044__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100116819600044__10_280x280.jpg"
+    ],
+    "sku": "100116819600044",
+    "displayName": "BLOK 黑色 M8 車把端後視鏡（單支）",
+    "install": "M8 內牙車把端",
+    "package": "單支",
+    "finish": "黑色",
+    "variant": "標準車把端款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為單支。"
     ]
   },
   {
@@ -117,6 +227,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100105219570803__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100105219570803__9_280x280.jpg"
+    ],
+    "sku": "100105219570803",
+    "displayName": "ORBII 黑色 M8 車把端後視鏡（單支）",
+    "install": "M8 內牙車把端",
+    "package": "單支",
+    "finish": "黑色",
+    "variant": "標準車把端款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為單支。"
     ]
   },
   {
@@ -129,6 +251,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100105219500803__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100105219500803__2_280x280.jpg"
+    ],
+    "sku": "100105219500803",
+    "displayName": "ORBIX 黑色 M8 車把端後視鏡（單支）",
+    "install": "M8 內牙車把端",
+    "package": "單支",
+    "finish": "黑色",
+    "variant": "標準車把端款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為單支。"
     ]
   },
   {
@@ -141,6 +275,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/990105219500803__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/990105219500803__2_280x280.jpg"
+    ],
+    "sku": "990105219500803",
+    "displayName": "ORBIX 黑色 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "黑色",
+    "variant": "標準車把端款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -153,6 +299,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100178119113804__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100178119113804__2_280x280.jpg"
+    ],
+    "sku": "100178119113804",
+    "displayName": "BOB 鍍鉻 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "鍍鉻",
+    "variant": "配重款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "屬於配重型車把端版本。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -165,6 +323,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100117419540023__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100117419540023__2_280x280.jpg"
+    ],
+    "sku": "100117419540023",
+    "displayName": "LEAP 黑色 M8 車把端後視鏡（右側單支）",
+    "install": "M8 內牙車把端",
+    "package": "右側單支",
+    "finish": "黑色",
+    "variant": "標準車把端款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為右側單支。"
     ]
   },
   {
@@ -177,6 +347,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118119543823__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118119543823__2_280x280.jpg"
+    ],
+    "sku": "100118119543823",
+    "displayName": "LEAP 黑色 M8 車把端後視鏡（右側單支）",
+    "install": "M8 內牙車把端",
+    "package": "右側單支",
+    "finish": "黑色",
+    "variant": "重型配重款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "屬於 heavy weight 配重版本。",
+      "商品名稱標示為右側單支。"
     ]
   },
   {
@@ -189,6 +371,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118119543813__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118119543813__2_280x280.jpg"
+    ],
+    "sku": "100118119543813",
+    "displayName": "LEAP 黑色 M8 車把端後視鏡（左側單支）",
+    "install": "M8 內牙車把端",
+    "package": "左側單支",
+    "finish": "黑色",
+    "variant": "重型配重款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "屬於 heavy weight 配重版本。",
+      "商品名稱標示為左側單支。"
     ]
   },
   {
@@ -201,6 +395,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100117419540013__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100117419540013__2_280x280.jpg"
+    ],
+    "sku": "100117419540013",
+    "displayName": "LEAP 黑色 M8 車把端後視鏡（左側單支）",
+    "install": "M8 內牙車把端",
+    "package": "左側單支",
+    "finish": "黑色",
+    "variant": "標準車把端款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "此版本未在商品名稱中標示 heavy weight。",
+      "商品名稱標示為左側單支。"
     ]
   },
   {
@@ -213,6 +419,19 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100108719433841__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100108719433841__2_280x280.jpg"
+    ],
+    "sku": "100108719433841",
+    "displayName": "MAMBA 霧面碳纖維 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "霧面碳纖維",
+    "variant": "重型配重款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "霧面碳纖維外觀版本。",
+      "屬於 heavy weight 配重版本。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -225,6 +444,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100178119043803__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100178119043803__2_280x280.jpg"
+    ],
+    "sku": "100178119043803",
+    "displayName": "ECLIPSE 黑色 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "黑色",
+    "variant": "重型配重款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "屬於 heavy weight 配重版本。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -237,6 +468,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100178418260603__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100178118263803__1_280x280.jpg"
+    ],
+    "sku": "100178418260603",
+    "displayName": "CLASSIC 黑色 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "黑色",
+    "variant": "重型配重款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "屬於 heavy weight 配重版本。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -249,6 +492,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118119393805__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118219390005__k1_280x280.jpg"
+    ],
+    "sku": "100118119393805",
+    "displayName": "AURA 藍色 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "藍色",
+    "variant": "重型配重款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "屬於 heavy weight 配重版本。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -261,6 +516,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100178118483803__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100178118483803__2_280x280.jpg"
+    ],
+    "sku": "100178118483803",
+    "displayName": "RETRO 黑色 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "黑色",
+    "variant": "重型配重款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "屬於 heavy weight 配重版本。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -273,6 +540,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100178118263804__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100178118263804__2_280x280.jpg"
+    ],
+    "sku": "100178118263804",
+    "displayName": "CLASSIC 鍍鉻 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "鍍鉻",
+    "variant": "重型配重款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "屬於 heavy weight 配重版本。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -285,6 +564,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118119303803__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118119303803__2_280x280.jpg"
+    ],
+    "sku": "100118119303803",
+    "displayName": "HORUS 黑色 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "黑色",
+    "variant": "重型配重款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "屬於 heavy weight 配重版本。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -297,6 +588,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118119393803__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118119393803__2_280x280.jpg"
+    ],
+    "sku": "100118119393803",
+    "displayName": "AURA 黑色 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "黑色",
+    "variant": "重型配重款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "屬於 heavy weight 配重版本。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -309,6 +612,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118119393806__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118219390006__k1_280x280.jpg"
+    ],
+    "sku": "100118119393806",
+    "displayName": "AURA 紅色 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "紅色",
+    "variant": "重型配重款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "屬於 heavy weight 配重版本。",
+      "商品名稱標示為左右一對。"
     ]
   },
   {
@@ -321,6 +636,18 @@
     "images": [
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118119313803__1_280x280.jpg",
       "https://cdn.kiwavmotors.com/products/images/main/resized/100118219310003__k1_280x280.jpg"
+    ],
+    "sku": "100118119313803",
+    "displayName": "BLADE 黑色 M8 車把端後視鏡（一對）",
+    "install": "M8 內牙車把端",
+    "package": "左右一對",
+    "finish": "黑色",
+    "variant": "重型配重款",
+    "thread": "M8",
+    "points": [
+      "此版本用於 M8 內牙車把端安裝。",
+      "屬於 heavy weight 配重版本。",
+      "商品名稱標示為左右一對。"
     ]
   }
 ]
