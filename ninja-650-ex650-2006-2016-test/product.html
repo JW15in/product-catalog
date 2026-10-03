@@ -1,5 +1,52 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>商品詳情</title><style>
-:root{--bg:#f5f6f7;--ink:#17181a;--muted:#666b73;--line:#e1e4e8}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif}.wrap{max-width:980px;margin:auto;padding:18px 16px 60px}a{color:inherit}.back{display:inline-block;margin:4px 0 16px;text-decoration:none;font-weight:800}.hero,.section{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;margin-bottom:14px}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}.main{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #eee;border-radius:14px;overflow:hidden}.main img{width:94%;height:94%;object-fit:contain;cursor:zoom-in}.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.thumb{width:74px;height:62px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:3px;cursor:pointer}.thumb img{width:100%;height:100%;object-fit:contain}.name{font-size:30px;font-weight:900;line-height:1.12}.price{font-size:25px;font-weight:900;margin:14px 0}.sold{display:inline-block;background:#fff0f0;color:#a32626;border:1px solid #f1caca;border-radius:999px;padding:6px 10px;font-weight:800;font-size:12px}.summary{color:#555b63;line-height:1.65;margin-top:14px}.section h2{margin:0 0 12px}.row{display:flex;justify-content:space-between;gap:20px;padding:10px 0;border-bottom:1px solid #eee}.row:last-child{border-bottom:0}.row span:first-child{font-weight:800}.fit{line-height:1.65}.note{font-size:13px;color:var(--muted);line-height:1.6}.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99;align-items:center;justify-content:center;padding:30px}.modal.open{display:flex}.modal img{max-width:94vw;max-height:90vh;object-fit:contain}.close{position:absolute;right:24px;top:18px;color:#fff;font-size:34px;cursor:pointer}@media(max-width:720px){.hero{grid-template-columns:1fr}.name{font-size:26px}}
+:root{--bg:#f5f6f7;--ink:#17181a;--muted:#666b73;--line:#e1e4e8;--soft:#eef1f4}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif}.wrap{max-width:980px;margin:auto;padding:18px 16px 60px}a{color:inherit}.back{display:inline-block;margin:4px 0 16px;text-decoration:none;font-weight:800}.hero,.section{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;margin-bottom:14px}.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:24px}.main{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #eee;border-radius:14px;overflow:hidden}.main img{width:94%;height:94%;object-fit:contain;cursor:zoom-in}.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.thumb{width:74px;height:62px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:3px;cursor:pointer}.thumb img{width:100%;height:100%;object-fit:contain}.name{font-size:30px;font-weight:900;line-height:1.12}.source-name{font-size:13px;color:var(--muted);line-height:1.5;margin-top:8px}.price{font-size:25px;font-weight:900;margin:14px 0}.sold{display:inline-block;background:#fff0f0;color:#a32626;border:1px solid #f1caca;border-radius:999px;padding:6px 10px;font-weight:800;font-size:12px}.chips{display:flex;gap:7px;flex-wrap:wrap;margin:13px 0}.chip{background:var(--soft);border-radius:999px;padding:6px 9px;font-size:12px;font-weight:750}.summary{color:#555b63;line-height:1.65;margin-top:12px}.section h2{margin:0 0 12px}.row{display:flex;justify-content:space-between;gap:20px;padding:10px 0;border-bottom:1px solid #eee}.row:last-child{border-bottom:0}.row span:first-child{font-weight:800}.points{margin:0;padding-left:20px;line-height:1.75}.fit{line-height:1.65}.note{font-size:13px;color:var(--muted);line-height:1.6}.source{display:inline-block;margin-top:8px;font-weight:800}.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99;align-items:center;justify-content:center;padding:30px}.modal.open{display:flex}.modal img{max-width:94vw;max-height:90vh;object-fit:contain}.close{position:absolute;right:24px;top:18px;color:#fff;font-size:34px;cursor:pointer}@media(max-width:720px){.hero{grid-template-columns:1fr}.name{font-size:26px}}
 </style></head><body><main class="wrap"><a class="back" href="index.html">← 回到型錄</a><div id="page"></div><div id="notfound" style="display:none" class="section">找不到這個款式。</div></main><div class="modal" id="modal"><div class="close" id="close">×</div><img id="modalImg"></div><script>
-const money=n=>'NT$'+Number(n).toLocaleString('zh-TW');function specs(n){const l=n.toLowerCase(),install=l.includes('fairing mount')?'整流罩固定式':'M8 內牙車把端安裝',pack=l.includes('mirrors')?'一對':(l.includes(' rh ')?'右側單支':(l.includes(' lh ')?'左側單支':'單支')),color=l.includes('black')?'黑色':(l.includes('chrome')?'鍍鉻':(l.includes('blue')?'藍色':(l.includes('red')?'紅色':'依商品名稱')));return [['安裝',install],['包裝',pack],['顏色',color]]}function info(n){const l=n.toLowerCase(),install=l.includes('fairing mount')?'整流罩固定式':'M8 內牙車把端安裝',feature=l.includes('heavy weight')?'重型配重款':(l.includes('weight')?'配重型':'車把端款'),pack=l.includes('mirrors')?'一對':(l.includes(' rh ')?'右側單支':(l.includes(' lh ')?'左側單支':'單支'));return install+'・'+feature+'・'+pack}const id=new URLSearchParams(location.search).get('id');Promise.all([fetch('products.json').then(r=>r.json()),fetch('config.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.json()).catch(()=>({}))]).then(([ps,cfg])=>{const p=ps.find(x=>x.id===id);if(!p||(cfg.products&&cfg.products[id]===false)||(p.soldOut&&cfg.showSoldOut===false)){document.getElementById('notfound').style.display='block';return;}document.title=p.name+'｜Ninja 650 EX650 型錄';const spec=specs(p.name).map(x=>`<div class="row"><span>${x[0]}</span><span>${x[1]}</span></div>`).join('');document.getElementById('page').innerHTML=`<section class="hero"><div><div class="main"><img id="mainPhoto" src="${p.images[0]||''}" alt="${p.name}"></div><div class="thumbs" id="thumbs"></div></div><div><div class="name">${p.name}</div>${p.soldOut?'<div class="sold">Sold Out</div>':''}<div class="price">${money(p.ntd)}</div><div class="summary">${info(p.name)}</div></div></section><section class="section"><h2>基本資訊</h2>${spec}</section><section class="section"><h2>Fitment</h2><div class="fit">Ninja 650 EX650（2006–2016）</div></section><section class="section"><div class="note">此為搜尋結果第 1 頁的測試型錄；圖片與價格依建立時可取得的來源資料。完整規格與實際適用性可在選定款式後再確認。</div></section>`;const main=document.getElementById('mainPhoto'),box=document.getElementById('thumbs');p.images.forEach(src=>{const b=document.createElement('button');b.className='thumb';b.innerHTML=`<img src="${src}" alt="">`;b.onclick=()=>main.src=src;box.appendChild(b)});if(cfg.enableZoom!==false){main.onclick=()=>{document.getElementById('modalImg').src=main.src;document.getElementById('modal').classList.add('open')}}else main.style.cursor='default';});document.getElementById('close').onclick=()=>document.getElementById('modal').classList.remove('open');document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')e.currentTarget.classList.remove('open')};
+const money=n=>'NT$'+Number(n).toLocaleString('zh-TW');
+function galleryCandidates(p){
+  const out=[];
+  if(p.sku){
+    for(let i=1;i<=10;i++) out.push('https://cdn.kiwavmotors.com/products/images/main/'+p.sku+'__'+i+'.jpg');
+    for(let i=1;i<=4;i++) out.push('https://cdn.kiwavmotors.com/products/images/main/'+p.sku+'__k'+i+'.jpg');
+  }
+  (p.images||[]).forEach(x=>out.push(x));
+  return [...new Set(out)];
+}
+function rows(p){
+  return [
+    ['安裝方式',p.install||'待確認'],
+    ['螺牙 / 固定',p.thread||'待確認'],
+    ['商品包裝',p.package||'待確認'],
+    ['顏色 / 表面',p.finish||'待確認'],
+    ['款式',p.variant||'待確認'],
+    ['來源售價','$'+p.usd+' USD'],
+    ['換算售價',money(p.ntd)],
+    ['庫存狀態',p.soldOut?'Sold Out':'搜尋頁未標示售罄']
+  ];
+}
+const id=new URLSearchParams(location.search).get('id');
+Promise.all([fetch('products.json').then(r=>r.json()),fetch('config.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.json()).catch(()=>({}))]).then(([ps,cfg])=>{
+  const p=ps.find(x=>x.id===id);
+  if(!p||(cfg.products&&cfg.products[id]===false)||(p.soldOut&&cfg.showSoldOut===false)){document.getElementById('notfound').style.display='block';return;}
+  document.title=(p.displayName||p.name)+'｜Ninja 650 EX650 型錄';
+  const specs=rows(p).map(x=>'<div class="row"><span>'+x[0]+'</span><span>'+x[1]+'</span></div>').join('');
+  const chips=[p.install,p.thread,p.package,p.finish].filter(Boolean).map(x=>'<span class="chip">'+x+'</span>').join('');
+  const pts=(p.points||[]).map(x=>'<li>'+x+'</li>').join('');
+  document.getElementById('page').innerHTML=`<section class="hero"><div><div class="main"><img id="mainPhoto" alt="${p.displayName||p.name}"></div><div class="thumbs" id="thumbs"></div></div><div><div class="name">${p.displayName||p.name}</div><div class="source-name">${p.name}</div>${p.soldOut?'<div class="sold">Sold Out</div>':''}<div class="price">${money(p.ntd)}</div><div class="chips">${chips}</div><div class="summary">此頁先提供選款所需的主要資訊。完整尺寸、材質、重量與最終適用性，可在選定款式後再由 KiWAV 商品頁人工確認。</div></div></section><section class="section"><h2>規格 / 基本資訊</h2>${specs}</section><section class="section"><h2>這款的重點</h2><ul class="points">${pts}</ul></section><section class="section"><h2>Fitment</h2><div class="fit">Ninja 650 EX650（2006–2016）</div></section><section class="section"><h2>商品來源</h2><div class="note">本測試頁的產品名單、售價與商品網址來自 KiWAV 搜尋結果第 1 頁。</div><a class="source" href="${p.url}" target="_blank" rel="noopener">查看 KiWAV 原商品頁 →</a></section>`;
+  const main=document.getElementById('mainPhoto'),box=document.getElementById('thumbs');
+  let first=false;
+  galleryCandidates(p).forEach((src,idx)=>{
+    const im=new Image();
+    im.onload=()=>{
+      if(!first){first=true;main.src=src}
+      const b=document.createElement('button');b.className='thumb';
+      const t=document.createElement('img');t.src=src;t.alt=(p.displayName||p.name)+' photo';
+      b.appendChild(t);b.onclick=()=>main.src=src;box.appendChild(b);
+    };
+    im.onerror=()=>{};
+    im.src=src;
+  });
+  if(cfg.enableZoom!==false){main.onclick=()=>{if(main.src){document.getElementById('modalImg').src=main.src;document.getElementById('modal').classList.add('open')}}}else main.style.cursor='default';
+});
+document.getElementById('close').onclick=()=>document.getElementById('modal').classList.remove('open');
+document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')e.currentTarget.classList.remove('open')};
 </script></body></html>
