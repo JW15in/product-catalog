@@ -34,6 +34,7 @@ label{font-weight:700}.hint{font-size:12px;color:var(--muted);line-height:1.6;ma
 <section class="panel">
 <h2>功能</h2>
 <div class="toggle"><label for="enableZoom">圖片點擊放大</label><input id="enableZoom" type="checkbox"></div>
+<div class="toggle" style="margin-top:14px"><label for="showWeight">Detail 顯示重量</label><input id="showWeight" type="checkbox"></div>
 </section>
 
 <section class="panel">
@@ -65,15 +66,15 @@ async function load(){
     const r=await fetch("1986-1992-suzuki-gsx-r/config.json?ts="+Date.now(),{cache:"no-store"});
     const cfg=await r.json();
     document.querySelectorAll("[data-id]").forEach(x=>x.checked=!cfg.products||cfg.products[x.dataset.id]!==false);
-    document.getElementById("enableZoom").checked=cfg.enableZoom!==false;
+    document.getElementById("enableZoom").checked=cfg.enableZoom!==false; document.getElementById("showWeight").checked=cfg.showWeight!==false;
   }catch(e){
-    setAll(true);document.getElementById("enableZoom").checked=true;
+    setAll(true);document.getElementById("enableZoom").checked=true;document.getElementById("showWeight").checked=true;
   }
 }
 async function saveConfig(){
   const token=document.getElementById("token").value.trim();
   if(!token){show("請先輸入 GitHub token。",false);return;}
-  const cfg={products:{},enableZoom:document.getElementById("enableZoom").checked};
+  const cfg={products:{},enableZoom:document.getElementById("enableZoom").checked,showWeight:document.getElementById("showWeight").checked};
   document.querySelectorAll("[data-id]").forEach(x=>cfg.products[x.dataset.id]=x.checked);
   try{
     show("正在讀取目前設定…");
