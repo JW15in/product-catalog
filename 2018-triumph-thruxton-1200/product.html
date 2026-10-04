@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>後視鏡詳細資料</title>
+<style>
+:root{--bg:#f6f7f8;--card:#fff;--ink:#17181a;--muted:#656b73;--line:#e2e5e9;--dark:#171a20;--soft:#eef1f4}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif}
+a{text-decoration:none;color:inherit}.wrap{max-width:1080px;margin:auto;padding:14px 14px 50px}.back{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:800;margin:5px 0 13px}
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.gallery{padding:16px;background:#f2f3f4}.main-photo{position:relative;background:#fff;border-radius:14px;overflow:hidden;cursor:zoom-in}
+.main-photo img{width:100%;aspect-ratio:4/3;object-fit:contain;display:block}
+.zoom-note{position:absolute;right:10px;bottom:10px;background:rgba(20,22,26,.78);color:#fff;padding:6px 9px;border-radius:999px;font-size:11px;font-weight:800}
+.thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:9px}
+.thumb{border:2px solid transparent;border-radius:9px;overflow:hidden;background:#fff;cursor:pointer;padding:0}
+.thumb.active{border-color:#171a20}.thumb img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.info{padding:25px 24px}.eyebrow{font-size:12px;letter-spacing:.12em;color:#7a8088;font-weight:850}.info h1{font-size:38px;line-height:1.05;margin:8px 0 10px}
+.summary{color:#555b63;line-height:1.65;margin-bottom:12px}.pricebox{font-size:26px;font-weight:900;margin:7px 0 16px}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{background:var(--soft);border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}
+.key{margin-top:20px;background:#171a20;color:#fff;border-radius:15px;padding:15px 16px;line-height:1.55}.key b{display:block;font-size:13px;color:#d8dde5;margin-bottom:4px}.key strong{font-size:20px}
+.section{background:#fff;border:1px solid var(--line);border-radius:18px;margin-top:16px;padding:20px}.section h2{font-size:20px;margin:0 0 14px}
+.specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}.row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:11px 0;font-size:14px}.row span:first-child{color:#6c727a}.row span:last-child{text-align:right;font-weight:700}
+.points{margin:0;padding-left:20px;color:#4e545c;line-height:1.75}.fitbox{background:#f0f5f0;border:1px solid #dbe7dc;border-radius:14px;padding:15px 16px;line-height:1.6}.warn{margin-top:12px;background:#fff6e8;border:1px solid #f0dfbf;border-radius:14px;padding:14px 15px;line-height:1.6}
+#notfound{display:none;background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;text-align:center}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:99;padding:20px;align-items:center;justify-content:center}.modal.open{display:flex}.modal img{max-width:96vw;max-height:92vh;object-fit:contain}.close{position:fixed;right:18px;top:14px;color:#fff;font-size:34px;cursor:pointer}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.gallery{padding:10px}.info{padding:20px 17px}.info h1{font-size:32px}.specs{grid-template-columns:1fr}.wrap{padding:10px 10px 36px}.thumbs{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<a class="back" href="index.html">← 回到全部款式</a>
+<div id="page">
+<section class="hero">
+<div class="gallery">
+  <div class="main-photo" id="mainPhoto"><img id="heroImg" alt=""><span class="zoom-note">點圖放大</span></div>
+  <div class="thumbs" id="thumbs"></div>
+</div>
+<div class="info">
+<h1 id="name"></h1>
+<div class="summary" id="summary"></div><div class="pricebox" id="price"></div>
+<div class="chips" id="chips"></div>
+<div class="key"><b>Fitment</b><strong>2018 Triumph Thruxton 1200</strong></div>
+</div>
+</section>
+<section class="section"><h2>規格</h2><div class="specs" id="specs"></div></section>
+<section class="section"><h2>這款的重點</h2><ul class="points" id="points"></ul></section>
+<section class="section"><h2>Fitment</h2><div class="fitbox">2018 Triumph Thruxton 1200</div></section>
+</div>
+<div id="notfound"><h2>找不到這個款式</h2><p>請回到型錄重新選擇。</p></div>
+</main>
+<div class="modal" id="modal"><div class="close" id="close">×</div><img id="modalImg" alt=""></div>
+<script>
+function imgs(p){
+  const a=[];
+  if(p.sku){
+    a.push("https://cdn.kiwavmotors.com/products/images/main/"+p.sku+"__k1.jpg");
+    for(let i=1;i<=10;i++)a.push("https://cdn.kiwavmotors.com/products/images/main/"+p.sku+"__"+i+".jpg");
+    for(let i=2;i<=4;i++)a.push("https://cdn.kiwavmotors.com/products/images/main/"+p.sku+"__k"+i+".jpg");
+  }
+  (p.images||[]).forEach(x=>a.push(x));
+  return [...new Set(a)];
+}
+const money=n=>'NT$'+Number(n).toLocaleString('zh-TW');
+const id=new URLSearchParams(location.search).get('id');
+Promise.all([fetch('products.json').then(r=>r.json()),fetch('config.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.json()).catch(()=>({}))]).then(([ps,cfg])=>{
+  const p=ps.find(x=>x.id===id);
+  if(!p||(cfg.products&&cfg.products[id]===false)||(p.soldOut&&cfg.showSoldOut===false)){
+    document.getElementById('page').style.display='none';document.getElementById('notfound').style.display='block';return;
+  }
+  document.title=(p.shortName||p.name)+'｜後視鏡詳細資料';
+    document.getElementById('name').textContent=p.shortName||p.name;
+  document.getElementById('summary').textContent=p.summary||'';
+  document.getElementById('price').textContent=money(p.ntd);
+  document.getElementById('chips').innerHTML=(p.chips||[]).map(x=>'<span class="chip">'+x+'</span>').join('');
+  document.getElementById('specs').innerHTML=(p.specs||[]).map(x=>'<div class="row"><span>'+x[0]+'</span><span>'+x[1]+'</span></div>').join('');
+  document.getElementById('points').innerHTML=(p.points||[]).map(x=>'<li>'+x+'</li>').join('');
+  const hero=document.getElementById('heroImg'),thumbs=document.getElementById('thumbs');
+  const limit=Number(cfg.detailImageLimit||0);
+  const candidates=imgs(p);
+  hero.dataset.empty='1';
+  let shown=0;
+  function tryImage(i){
+    if(i>=candidates.length || (limit>0 && shown>=limit)) return;
+    const src=candidates[i];
+    const im=new Image();
+    im.onload=()=>{
+      const b=document.createElement('button');b.className='thumb';
+      const t=document.createElement('img');t.src=src;t.alt=(p.shortName||p.name)+' photo '+(shown+1);
+      b.appendChild(t);
+      b.onclick=()=>{hero.src=src;document.querySelectorAll('.thumb').forEach(x=>x.classList.remove('active'));b.classList.add('active')};
+      thumbs.appendChild(b);
+      if(!hero.src||hero.dataset.empty==='1'){hero.src=src;hero.dataset.empty='0';b.classList.add('active')}
+      shown++;
+      tryImage(i+1);
+    };
+    im.onerror=()=>tryImage(i+1);
+    im.src=src;
+  }
+  tryImage(0);
+  document.getElementById('mainPhoto').onclick=()=>{if(cfg.enableZoom!==false&&hero.src){document.getElementById('modalImg').src=hero.src;document.getElementById('modal').classList.add('open')}};
+  if(cfg.enableZoom===false){const note=document.querySelector('.zoom-note');if(note)note.style.display='none';document.getElementById('mainPhoto').style.cursor='default'}
+  if(cfg.showWeight===false){document.querySelectorAll('#specs .row').forEach(row=>{const label=row.querySelector('span:first-child');if(label&&label.textContent.trim()==='重量')row.style.display='none'})}
+});
+document.getElementById('close').onclick=()=>document.getElementById('modal').classList.remove('open');
+document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')e.currentTarget.classList.remove('open')};
+</script></body></html>
